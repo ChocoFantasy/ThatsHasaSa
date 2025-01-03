@@ -15,7 +15,7 @@ body {
   font-size: 100%;
   line-height: 1.5;
   background-image: url(/images/background.jpg);
-  cursor: url('/ThatsHasaSa/images/Home/navbar-UI.svg'), auto;
+  cursor: url('${import.meta.env.BASE_URL}images/Home/navbar-UI.svg'), auto;
   /* 設置自定義游標圖片 */
 
 }
@@ -64,7 +64,7 @@ a {
 // Website.scss
 
 // Variables
-$primary-color: #3498db;
+$primary-color: #1c241e;
 $secondary-color: #2ecc71;
 $background-color: #f5f6fa;
 $text-color: #2c3e50;
@@ -133,22 +133,36 @@ $transition-duration: 0.3s;
   z-index: 50;
 
   .logo {
-    width: 128px;
-    height: 48px;
-
+    width: 128px; /* 固定父容器寬度 */
+    height: 48px; /* 固定父容器高度 */
+    overflow: hidden; /* 隱藏超出部分，防止滾動條 */
+    
     img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
+      width: 100%; /* 圖片寬度填滿容器 */
+      height: 100%; /* 圖片高度填滿容器 */
+      object-fit: contain; /* 保持圖片比例，適配容器 */
+      display: block; /* 消除圖片可能的間隙 */
     }
   }
 
   .music-toggle {
     padding: 8px;
+    width: 48px; /* 確保按鈕大小一致 */
+    height: 48px; /* 確保按鈕大小一致 */
     border-radius: 999px;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* 圖片居中 */
+
+    img {
+      width: 24px; /* 音樂圖示固定寬度 */
+      height: 24px; /* 音樂圖示固定高度 */
+      object-fit: contain; /* 確保圖片不會變形 */
+    }
 
     &:hover {
-      background-color: $background-color;
+      transform: scale(1.1);
+      color:$primary-color;
     }
   }
 }
@@ -195,6 +209,7 @@ $transition-duration: 0.3s;
         text-decoration: none;
 
         &:hover {
+          transform: scale(1.1);
           color: $primary-color;
         }
       }
