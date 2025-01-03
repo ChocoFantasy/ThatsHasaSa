@@ -70,13 +70,13 @@ function Layout() {
         {/* 浮動連結到專屬社群 */}
         <div className="social-links">
           <a href="#">
-            <img src="/images/Home/icon-sns-facebook.svg" alt="Facebook" />
+            <img src={`${import.meta.env.BASE_URL}images/Home/icon-sns-facebook.svg`} alt="Facebook" />
           </a>
           <a href="#">
-            <img src="/images/Home/icon-sns-IG.svg" alt="Instagram" />
+            <img src="/ThatsHasaSa/images/Home/icon-sns-IG.svg" alt="Instagram" />
           </a>
           <a href="#">
-            <img src="/images/Home/icon-sns-youtube.svg" alt="YouTube" />
+            <img src="/ThatsHasaSa/images/Home/icon-sns-youtube.svg" alt="YouTube" />
           </a>
         </div>
       </div>
