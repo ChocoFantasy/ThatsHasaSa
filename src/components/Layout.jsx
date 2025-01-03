@@ -20,7 +20,7 @@ function Layout() {
         {/* Logo 放置區 */}
         <div className="logo">
           <Link to="/">
-            <img src="/images/Home/LOGO.jpg" alt="Logo" />
+            <img src={`${import.meta.env.BASE_URL}images/Home/LOGO.jpg`} alt="Logo" />
           </Link>
         </div>
         {/* 音樂按鈕 */}
@@ -30,7 +30,7 @@ function Layout() {
         >
           <img
             src={
-              isPlaying ? "/images/Home/Volume-On" : "/images/Home/Volume-On"
+              isPlaying ? "/ThatsHasaSa/images/Home/Volume-On.svg" : "/ThatsHasaSa/images/Home/Volume-On.svg"
             }
             alt={isPlaying ? "Volume On" : "Volume Off"}
           />
@@ -47,8 +47,8 @@ function Layout() {
             <img
               src={
                 isNavbarOpen
-                  ? "/images/Home/navbar-UI.jpg"
-                  : "/images/Home/Loading.jpg"
+                  ? "/ThatsHasaSa/images/Home/navbar-UI.svg"
+                  : "/ThatsHasaSa/images/Home/Loading.jpg"
               }
               alt={isNavbarOpen ? "Close Navbar" : "Open Navbar"}
             />
@@ -70,13 +70,22 @@ function Layout() {
         {/* 浮動連結到專屬社群 */}
         <div className="social-links">
           <a href="#">
-            <img src={`${import.meta.env.BASE_URL}images/Home/icon-sns-facebook.svg`} alt="Facebook" />
+            <img
+              src="/ThatsHasaSa/images/Home/icon-sns-facebook.svg"
+              alt="Facebook"
+            />
           </a>
           <a href="#">
-            <img src="/ThatsHasaSa/images/Home/icon-sns-IG.svg" alt="Instagram" />
+            <img
+              src="/ThatsHasaSa/images/Home/icon-sns-IG.svg"
+              alt="Instagram"
+            />
           </a>
           <a href="#">
-            <img src="/ThatsHasaSa/images/Home/icon-sns-youtube.svg" alt="YouTube" />
+            <img
+              src="/ThatsHasaSa/images/Home/icon-sns-youtube.svg"
+              alt="YouTube"
+            />
           </a>
         </div>
       </div>
@@ -92,16 +101,18 @@ function Layout() {
               <h3>Social Media</h3>
               <div className="social-icons">
                 <a href="#">
+            
                   <img
-                    src="/images/Home/icon-sns-facebook.svg"
+                    src={`${import.meta.env.BASE_URL}/images/Home/icon-sns-facebook.svg`}
                     alt="Facebook"
                   />
                 </a>
                 <a href="#">
-                  <img src="/images/Home/icon-sns-IG.svg" alt="Instagram" />
+
+                  <img src="/ThatsHasaSa/images/Home/icon-sns-IG.svg" alt="Instagram" />
                 </a>
                 <a href="#">
-                  <img src="/images/Home/icon-sns-youtube.svg" alt="YouTube" />
+                  <img src="/ThatsHasaSa/images/Home/icon-sns-youtube.svg" alt="YouTube" />
                 </a>
               </div>
             </div>
