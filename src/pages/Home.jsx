@@ -6,9 +6,9 @@ const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
-    { id: 1, title: "Event 1", image: "/api/placeholder/800/400" },
-    { id: 2, title: "Event 2", image: "/api/placeholder/800/400" },
-    { id: 3, title: "Event 3", image: "/api/placeholder/800/400" }
+    { id: 1, title: "Event 1", image: "/ThatsHasaSa/images/Home/mix/Home-banner.jpg" },
+    { id: 2, title: "Event 2", image: "/ThatsHasaSa/images/Home/mix/Hesa.JPG" },
+    { id: 3, title: "Event 3", image: "/ThatsHasaSa/images/Home/mix/Chi.JPG" }
   ];
 
   useEffect(() => {
@@ -21,6 +21,7 @@ const Home = () => {
 
   return (
     <>
+      {/* 活動輪播圖 */}
       <div className="carousel">
         {slides.map((slide, index) => (
           <div
@@ -33,10 +34,12 @@ const Home = () => {
       </div>
 
       <div className="content-grid">
+        {/* 推特推廣區 */}
         <div className="twitter-feed">
           <h2>Twitter Feed</h2>
           <div className="twitter-content"></div>
         </div>
+        {/* 最新消息 */}
         <div className="announcements">
           <h2>Latest Updates</h2>
           <div className="updates-list">
