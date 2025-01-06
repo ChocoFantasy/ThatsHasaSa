@@ -88,7 +88,7 @@ const Characters = () => {
         "命運可以改變。",
         "聆聽內心的聲音。"
       ],
-      image: "/ThatsSaHesa/images/Shop/Coasters/Yaji.JPG",
+      image: "/ThatsSaHesa/images/Shop/Coasters/Yaji.jpg",
       theme: {
         primary: '#3B42A7',
         primaryTransparent: '#3B42A733',

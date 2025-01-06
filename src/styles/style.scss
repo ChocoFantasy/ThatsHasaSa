@@ -554,181 +554,188 @@ $transition-duration: 0.3s;
 
 //角色介紹頁
 .character-page {
-  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px; 
+  max-width: 1200px; 
+  margin: auto; 
   transition: background-color 0.3s ease;
-  padding: 2rem;
 
   .character-content {
     position: relative;
-    display: grid;
-    grid-template-columns: 45% 55%;
-    min-height: 600px;
-    margin-bottom: 2rem;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
     overflow: hidden;
-    border-radius: 1.5rem;
-    
-    .character-info {
-      padding: 4rem 3rem;
-      z-index: 2;
+    padding: 30px; /* Adjusted padding */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.7));
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
 
-      .character-name {
-        font-size: 4rem;
-        font-weight: 700;
-        margin-bottom: 1.5rem;
-        line-height: 1.2;
-      }
+  .character-visual {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    animation: fadeIn 0.8s ease-in-out;
+  }
 
-      .tagline {
-        font-size: 1.8rem;
-        margin-bottom: 3rem;
-        opacity: 0.9;
-      }
+  .character-visual img {
+    width: 400px;
+    height: 400px; /* Reduced image size */
+    border-radius: 15px;
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
 
-      .info-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
+  .character-visual img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.5);
+  }
 
-        .info-block {
-          background: rgba(255, 255, 255, 0.1);
-          backdrop-filter: blur(10px);
-          padding: 2rem;
-          border-radius: 1rem;
+  .character-info {
+    flex: 1;
+    max-width: 45%;
+    color: var(--character-primary);
+    padding: 20px;
+    margin-left: 15px;
+    background: rgba(0, 0, 0, 0.85);
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    animation: slideIn 0.8s ease-in-out;
 
-          &.faction {
-            grid-column: span 2;
-          }
-
-          &.description {
-            grid-column: span 2;
-          }
-
-          &.quotes {
-            grid-column: span 2;
-            
-            ul {
-              list-style-type: none;
-              padding: 0;
-              
-              li {
-                margin-bottom: 1rem;
-                font-style: italic;
-                
-                &:before { content: "「"; }
-                &:after { content: "」"; }
-              }
-            }
-          }
-        }
-      }
+    .character-name {
+      font-size: 4rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-align: left;
+      color: #fff; /* Adjusted text color to white */
     }
 
-    .character-visual {
-      position: relative;
-      height: 100%;
-      
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      &::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(
-          90deg,
-          var(--character-primary-transparent) 0%,
-          transparent 100%
-        );
-        z-index: 1;
-      }
+    .tagline {
+      font-size: 1.8rem;
+      font-style: italic;
+      text-align: left;
+      margin-bottom: 30px;
+      color: var(--character-primary); 
     }
+  }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    font-size: 1.3rem;
+  }
+
+  .info-block {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    color: #000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transform: scale(1);
+    transition: transform 0.3s ease;
+  }
+
+  .info-block:hover {
+    transform: scale(1.1);
   }
 
   .character-selector {
     display: flex;
-    gap: 1.5rem;
-    padding: 2rem;
     justify-content: center;
     flex-wrap: wrap;
+    gap: 20px; 
+    margin-top: 20px; 
+    animation: fadeIn 1.2s ease-in-out;
+  }
 
-    .selector-button {
-      --skew-angle: -15deg;
-      position: relative;
-      padding: 0.5rem;
-      background: none;
-      border: none;
-      cursor: pointer;
-      transition: transform 0.3s;
-      transform: skew(var(--skew-angle));
-      width: 180px;
+  .selector-button {
+    position: relative;
+    width: 160px; 
+    height: 180px;
+    clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+    background: none; 
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    overflow: hidden;
 
-      &:hover {
-        transform: skew(var(--skew-angle)) scale(1.05);
-      }
+    &.active {
+      border: 15px solid var(--character-primary); 
+      transform: scale(1.1);
+      box-shadow: 0 0 15px var(--character-primary); 
+    }
 
-      .selector-inner {
-        border: 2px solid transparent;
-        overflow: hidden;
-        transition: border-color 0.3s;
-        
-        img {
-          transform: skew(calc(-1 * var(--skew-angle)));
-          width: 100%;
-          aspect-ratio: 1;
-          object-fit: cover;
-        }
-      }
+    &:hover {
+      background: var(--character-primary); 
+      box-shadow: 0 6px 20px rgba(255, 255, 255, 0.5);
+    }
+  }
 
-      &.active .selector-inner {
-        border-color: var(--character-primary);
-      }
+  .selector-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end; 
+    justify-content: center;
+    overflow: hidden;
 
-      .selector-name {
-        transform: skew(calc(-1 * var(--skew-angle)));
-        margin-top: 0.5rem;
-        font-size: 1.2rem;
-        color: var(--character-primary);
-      }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .selector-name {
+    position: absolute;
+    bottom: 0; 
+    left: 0;
+    width: 100%;
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 5px 0;
+    clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%); 
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: var(--character-primary); 
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateX(-100px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
     }
   }
 }
-
-@media (max-width: 1024px) {
-  .character-page {
-    .character-content {
-      grid-template-columns: 1fr;
-      
-      .character-visual {
-        height: 400px;
-      }
-    }
-  }
-}
-
-@media (max-width: 1024px) {
-  .character-page {
-    .character-display {
-      .character-content {
-        flex-direction: column;
-        
-        .character-info {
-          width: 100%;
-          z-index: 2;
-        }
-        
-        .character-image {
-          position: relative;
-          width: 100%;
-          height: 400px;
-        }
-      }
-    }
-  }
-}
-
 
 // 商品頁面
 .product-container {
