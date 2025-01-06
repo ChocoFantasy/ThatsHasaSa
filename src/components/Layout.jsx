@@ -67,7 +67,7 @@ function Layout() {
         {/* Logo 放置區 */}
         <div className="logo">
           <Link to="/Home">
-            <img src={`${import.meta.env.BASE_URL}images/Home/LOGO.jpg`} alt="Logo" />
+            <img src={`/ThatsSaHesa/images/Home/LOGO.jpg`} alt="Logo" />
           </Link>
         </div>
   
