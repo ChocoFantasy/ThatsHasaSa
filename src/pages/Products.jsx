@@ -111,7 +111,7 @@ const Product = () => {
           <h2>最新消息</h2>
           <div className="news-item">
             <span className="tag new">NEW</span>
-            <p>歡迎光臨那個黑砂啥小夥伴的商店！現在購買任何商品都享有免運費優惠。</p>
+            <p>歡迎光臨那個啥黑砂!?小夥伴的商店！現在購買任何商品都享有免運費優惠。</p>
           </div>
           <div className="news-item">
             <span className="tag announcement">公告</span>
