@@ -9,9 +9,9 @@ const Product = () => {
 
   // 輪播圖數據
   const carouselItems = [
-    { id: 1, image: "/ThatsHesaSa/images/mix/Home-banner.jpg", title: "新品上市" },
-    { id: 2, image: "/ThatsHesaSa/images/mix/Hesa01.JPG", title: "限時特價" },
-    { id: 3, image: "/ThatsHesaSa/images/mix/yayaguoguo.JPG", title: "節日優惠" },
+    { id: 1, image: "/ThatsSaHesa/images/mix/Home-banner.jpg", title: "新品上市" },
+    { id: 2, image: "/ThatsSaHesa/images/mix/Hesa01.JPG", title: "限時特價" },
+    { id: 3, image: "/ThatsSaHesa/images/mix/yayaguoguo.JPG", title: "節日優惠" },
   ];
 
   // 商品種類
@@ -22,24 +22,24 @@ const Product = () => {
 
   // 商品數據 - 修正ID重複問題
   const products = [
-    { id: 1, name: "黑砂B", image: "/ThatsHesaSa/images/Shop/t-shirt/Hesa-B.jpg", type: "T-shirt", character: "黑砂", price: 790 },
-    { id: 2, name: "黑砂W", image: "/ThatsHesaSa/images/Shop/t-shirt/Hesa-W.jpg", type: "T-shirt", character: "黑砂", price: 790 },
-    { id: 3, name: "黑砂杯墊", image: "/ThatsHesaSa/images/Shop/Coasters/Hesa.jpg", type: "杯墊", character: "黑砂", price: 390 },
-    { id: 4, name: "貝陸B", image: "/ThatsHesaSa/images/Shop/t-shirt/BearLu-B.jpg", type: "T-shirt", character: "貝陸", price: 790 },
-    { id: 5, name: "貝陸W", image: "/ThatsHesaSa/images/Shop/t-shirt/BearLu-W.jpg", type: "T-shirt", character: "貝陸", price: 790 },
-    { id: 6, name: "貝陸杯墊", image: "/ThatsHesaSa/images/Shop/Coasters/BearLu.jpg", type: "杯墊", character: "貝陸", price: 390 },
-    { id: 7, name: "浣培B", image: "/ThatsHesaSa/images/Shop/t-shirt/Huanpei-B.jpg", type: "T-shirt", character: "浣培", price: 790 },
-    { id: 8, name: "浣培W", image: "/ThatsHesaSa/images/Shop/t-shirt/Huanpei-W.jpg", type: "T-shirt", character: "浣培", price: 790 },
-    { id: 9, name: "浣培杯墊", image: "/ThatsHesaSa/images/Shop/Coasters/Huanpei.jpg", type: "杯墊", character: "浣培", price: 390 },
-    { id: 10, name: "粒粒B", image: "/ThatsHesaSa/images/Shop/t-shirt/Lili-B.jpg", type: "T-shirt", character: "粒粒", price: 790 },
-    { id: 11, name: "粒粒W", image: "/ThatsHesaSa/images/Shop/t-shirt/Lili-W.jpg", type: "T-shirt", character: "粒粒", price: 790 },
-    { id: 12, name: "粒粒杯墊", image: "/ThatsHesaSa/images/Shop/Coasters/Lili.jpg", type: "杯墊", character: "粒粒", price: 390 },
-    { id: 13, name: "亞雞B", image: "/ThatsHesaSa/images/Shop/t-shirt/Yaji-B.jpg", type: "T-shirt", character: "亞雞", price: 790 },
-    { id: 14, name: "亞雞W", image: "/ThatsHesaSa/images/Shop/t-shirt/Yaji-W.jpg", type: "T-shirt", character: "亞雞", price: 790 },
-    { id: 15, name: "亞雞杯墊", image: "/ThatsHesaSa/images/Shop/Coasters/Yaji.jpg", type: "杯墊", character: "亞雞", price: 390 },
-    { id: 16, name: "勾勾B", image: "/ThatsHesaSa/images/Shop/t-shirt/GouGou-B.jpg", type: "T-shirt", character: "勾勾", price: 790 },
-    { id: 17, name: "勾勾W", image: "/ThatsHesaSa/images/Shop/t-shirt/Gou-Gou-W.jpg", type: "T-shirt", character: "勾勾", price: 790 },
-    { id: 18, name: "勾勾杯墊", image: "/ThatsHesaSa/images/Shop/Coasters/GouGou.jpg", type: "杯墊", character: "勾勾", price: 390 }
+    { id: 1, name: "黑砂B", image: "/ThatsSaHesa/images/Shop/t-shirt/Hesa-B.jpg", type: "T-shirt", character: "黑砂", price: 790 },
+    { id: 2, name: "黑砂W", image: "/ThatsSaHesa/images/Shop/t-shirt/Hesa-W.jpg", type: "T-shirt", character: "黑砂", price: 790 },
+    { id: 3, name: "黑砂杯墊", image: "/ThatsSaHesa/images/Shop/Coasters/Hesa.jpg", type: "杯墊", character: "黑砂", price: 390 },
+    { id: 4, name: "貝陸B", image: "/ThatsSaHesa/images/Shop/t-shirt/BearLu-B.jpg", type: "T-shirt", character: "貝陸", price: 790 },
+    { id: 5, name: "貝陸W", image: "/ThatsSaHesa/images/Shop/t-shirt/BearLu-W.jpg", type: "T-shirt", character: "貝陸", price: 790 },
+    { id: 6, name: "貝陸杯墊", image: "/ThatsSaHesa/images/Shop/Coasters/BearLu.jpg", type: "杯墊", character: "貝陸", price: 390 },
+    { id: 7, name: "浣培B", image: "/ThatsSaHesa/images/Shop/t-shirt/Huanpei-B.jpg", type: "T-shirt", character: "浣培", price: 790 },
+    { id: 8, name: "浣培W", image: "/ThatsSaHesa/images/Shop/t-shirt/Huanpei-W.jpg", type: "T-shirt", character: "浣培", price: 790 },
+    { id: 9, name: "浣培杯墊", image: "/ThatsSaHesa/images/Shop/Coasters/Huanpei.jpg", type: "杯墊", character: "浣培", price: 390 },
+    { id: 10, name: "粒粒B", image: "/ThatsSaHesa/images/Shop/t-shirt/Lili-B.jpg", type: "T-shirt", character: "粒粒", price: 790 },
+    { id: 11, name: "粒粒W", image: "/ThatsSaHesa/images/Shop/t-shirt/Lili-W.jpg", type: "T-shirt", character: "粒粒", price: 790 },
+    { id: 12, name: "粒粒杯墊", image: "/ThatsSaHesa/images/Shop/Coasters/Lili.jpg", type: "杯墊", character: "粒粒", price: 390 },
+    { id: 13, name: "亞雞B", image: "/ThatsSaHesa/images/Shop/t-shirt/Yaji-B.jpg", type: "T-shirt", character: "亞雞", price: 790 },
+    { id: 14, name: "亞雞W", image: "/ThatsSaHesa/images/Shop/t-shirt/Yaji-W.jpg", type: "T-shirt", character: "亞雞", price: 790 },
+    { id: 15, name: "亞雞杯墊", image: "/ThatsSaHesa/images/Shop/Coasters/Yaji.jpg", type: "杯墊", character: "亞雞", price: 390 },
+    { id: 16, name: "勾勾B", image: "/ThatsSaHesa/images/Shop/t-shirt/GouGou-B.jpg", type: "T-shirt", character: "勾勾", price: 790 },
+    { id: 17, name: "勾勾W", image: "/ThatsSaHesa/images/Shop/t-shirt/Gou-Gou-W.jpg", type: "T-shirt", character: "勾勾", price: 790 },
+    { id: 18, name: "勾勾杯墊", image: "/ThatsSaHesa/images/Shop/Coasters/GouGou.jpg", type: "杯墊", character: "勾勾", price: 390 }
   ];
 
   // 自動輪播

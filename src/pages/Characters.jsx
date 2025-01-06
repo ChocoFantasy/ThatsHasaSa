@@ -11,9 +11,9 @@ const Characters = () => {
       tagline: "「超越你的想像」",
       description: "這是一個勇敢且充滿智慧的角色，具有強大的技能和堅定的意志。",
       images: [
-        "/ThatsHesaSa/images/mix/Hesa.JPG",
-        "/ThatsHesaSa/images/mix/Hesa01.JPG",
-        "/ThatsHesaSa/images/mix/Hesa03.JPG",
+        "/ThatsSaHesa/images/mix/Hesa.JPG",
+        "/ThatsSaHesa/images/mix/Hesa01.JPG",
+        "/ThatsSaHesa/images/mix/Hesa03.JPG",
       ],
     },
     {
@@ -22,9 +22,9 @@ const Characters = () => {
       tagline: "「海風吹在身上真是舒服~」",
       description: "這是一個平靜且睿智的角色，善於觀察和思考。",
       images: [
-        "/ThatsHesaSa/images/mix/lili.JPG",
-        "/ThatsHesaSa/images/mix/lilichi.jpg",
-        "/ThatsHesaSa/images/Home/LOGO.jpg",
+        "/ThatsSaHesa/images/mix/lili.JPG",
+        "/ThatsSaHesa/images/mix/lilichi.jpg",
+        "/ThatsSaHesa/images/Home/LOGO.jpg",
       ],
     },
     {
@@ -33,9 +33,9 @@ const Characters = () => {
       tagline: "「不要動我的垃圾！」",
       description: "這是一個靈活且充滿能量的角色，總能在危機時刻發揮作用。",
       images: [
-        "/ThatsHesaSa/images/mix/chi01.JPG",
-        "/ThatsHesaSa/images/mix/chi02.JPG",
-        "/ThatsHesaSa/images/mix/chichi.JPG",
+        "/ThatsSaHesa/images/mix/chi01.JPG",
+        "/ThatsSaHesa/images/mix/chi02.JPG",
+        "/ThatsSaHesa/images/mix/chichi.JPG",
       ],
     },
     {
@@ -44,9 +44,9 @@ const Characters = () => {
       tagline: "「想看看我最新的發現科技嗎?」",
       description: "這是一個靈活且充滿能量的角色，總能在危機時刻發揮作用。",
       images: [
-        "/ThatsHesaSa/images/Shop/Coasters/BearLu.jpg",
-        "/ThatsHesaSa/images/Shop/Coasters/BearLu.jpg",
-        "/ThatsHesaSa/images/Shop/Coasters/BearLu.jpg",
+        "/ThatsSaHesa/images/Shop/Coasters/BearLu.jpg",
+        "/ThatsSaHesa/images/Shop/Coasters/BearLu.jpg",
+        "/ThatsSaHesa/images/Shop/Coasters/BearLu.jpg",
       ],
     },
     {
@@ -55,9 +55,9 @@ const Characters = () => {
       tagline: "「想吃點什麼，都能做給你吃」",
       description: "這是一個靈活且充滿能量的角色，總能在危機時刻發揮作用。",
       images: [
-        "/ThatsHesaSa/images/mix/yaya.JPG",
-        "/ThatsHesaSa/images/mix/yaya01.JPG",
-        "/ThatsHesaSa/images/mix/yaya02.JPG",
+        "/ThatsSaHesa/images/mix/yaya.JPG",
+        "/ThatsSaHesa/images/mix/yaya01.JPG",
+        "/ThatsSaHesa/images/mix/yaya02.JPG",
       ],
     },
     {
@@ -66,9 +66,9 @@ const Characters = () => {
       tagline: "「帶給大家歡樂，是我最開心的事」",
       description: "這是一個靈活且充滿能量的角色，總能在危機時刻發揮作用。",
       images: [
-        "/ThatsHesaSa/images/mix/guoguo.JPG",
-        "/ThatsHesaSa/images/mix/guoguo01.JPG",
-        "/ThatsHesaSa/images/mix/guoguo.JPG",
+        "/ThatsSaHesa/images/mix/guoguo.JPG",
+        "/ThatsSaHesa/images/mix/guoguo01.JPG",
+        "/ThatsSaHesa/images/mix/guoguo.JPG",
       ],
     },
   ];
