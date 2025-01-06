@@ -553,142 +553,176 @@ $transition-duration: 0.3s;
 }
 
 //角色介紹頁
-.characters-page {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  padding: 20px;
-  background: linear-gradient(to bottom, #f5f5f5, #eaeaea);
+.character-page {
+  min-height: 100vh;
+  transition: background-color 0.3s ease;
+  padding: 2rem;
 
-  .character-details {
-    background: #fff;
-    border-radius: 16px;
-    padding: 40px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  .character-content {
+    position: relative;
+    display: grid;
+    grid-template-columns: 45% 55%;
+    min-height: 600px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    border-radius: 1.5rem;
+    
+    .character-info {
+      padding: 4rem 3rem;
+      z-index: 2;
 
-    .details-header {
-      text-align: center;
-
-      h1 {
-        font-size: 2.5rem;
-        margin-bottom: 10px;
-        color: #333;
+      .character-name {
+        font-size: 4rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
       }
 
-      h2 {
+      .tagline {
         font-size: 1.8rem;
-        margin-bottom: 20px;
-        color: #555;
+        margin-bottom: 3rem;
+        opacity: 0.9;
       }
 
-      p {
-        font-size: 1.2rem;
-        color: #666;
-        max-width: 800px;
-        margin: 0 auto;
+      .info-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+
+        .info-block {
+          background: rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(10px);
+          padding: 2rem;
+          border-radius: 1rem;
+
+          &.faction {
+            grid-column: span 2;
+          }
+
+          &.description {
+            grid-column: span 2;
+          }
+
+          &.quotes {
+            grid-column: span 2;
+            
+            ul {
+              list-style-type: none;
+              padding: 0;
+              
+              li {
+                margin-bottom: 1rem;
+                font-style: italic;
+                
+                &:before { content: "「"; }
+                &:after { content: "」"; }
+              }
+            }
+          }
+        }
       }
     }
 
-    .character-carousel {
-      display: flex;
-      overflow-x: auto;
-      gap: 16px;
+    .character-visual {
+      position: relative;
+      height: 100%;
+      
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
 
-      .carousel-item {
-        flex-shrink: 0;
-        width: 300px;
-        height: 200px;
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
+      &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          90deg,
+          var(--character-primary-transparent) 0%,
+          transparent 100%
+        );
+        z-index: 1;
       }
     }
   }
 
   .character-selector {
-    text-align: center;
+    display: flex;
+    gap: 1.5rem;
+    padding: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
 
-    h3 {
-      font-size: 1.5rem;
-      color: #444;
-      margin-bottom: 20px;
-    }
+    .selector-button {
+      --skew-angle: -15deg;
+      position: relative;
+      padding: 0.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.3s;
+      transform: skew(var(--skew-angle));
+      width: 180px;
 
-    .character-list {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
+      &:hover {
+        transform: skew(var(--skew-angle)) scale(1.05);
+      }
 
-      .character-card {
-        position: relative;
-        width: 120px;
-        height: 180px;
-        border-radius: 8px;
+      .selector-inner {
+        border: 2px solid transparent;
         overflow: hidden;
-        cursor: pointer;
-        transition: transform 0.3s, box-shadow 0.3s;
-
+        transition: border-color 0.3s;
+        
         img {
+          transform: skew(calc(-1 * var(--skew-angle)));
           width: 100%;
-          height: 100%;
+          aspect-ratio: 1;
           object-fit: cover;
-          filter: grayscale(50%);
-          transition: filter 0.3s;
         }
+      }
 
-        .card-overlay {
-          position: absolute;
-          top: 0;
-          left: 0;
+      &.active .selector-inner {
+        border-color: var(--character-primary);
+      }
+
+      .selector-name {
+        transform: skew(calc(-1 * var(--skew-angle)));
+        margin-top: 0.5rem;
+        font-size: 1.2rem;
+        color: var(--character-primary);
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .character-page {
+    .character-content {
+      grid-template-columns: 1fr;
+      
+      .character-visual {
+        height: 400px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .character-page {
+    .character-display {
+      .character-content {
+        flex-direction: column;
+        
+        .character-info {
           width: 100%;
-          height: 100%;
-          background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.7));
-          z-index: 1;
-        }
-
-        .card-info {
-          position: absolute;
-          bottom: 10px;
-          left: 10px;
           z-index: 2;
-          color: #fff;
-
-          h4 {
-            font-size: 1.2rem;
-            margin: 0;
-          }
-
-          p {
-            font-size: 0.9rem;
-            margin: 0;
-          }
         }
-
-        &:hover {
-          transform: translateY(-10px);
-          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-
-          img {
-            filter: grayscale(0%);
-          }
-        }
-
-        &.active {
-          transform: scale(1.1);
-          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-
-          img {
-            filter: grayscale(0%);
-          }
+        
+        .character-image {
+          position: relative;
+          width: 100%;
+          height: 400px;
         }
       }
     }
