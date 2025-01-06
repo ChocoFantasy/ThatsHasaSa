@@ -16,7 +16,7 @@ body {
   line-height: 1.5;
   background-image: url(/ThatsSaHesa/images/background.jpg);
   cursor: url('/ThatsSaHesa/images/Home/Loading.jpg'),
-  auto;
+    auto;
   /* 設置自定義游標圖片 */
 
 }
@@ -155,7 +155,7 @@ $transition-duration: 0.3s;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-// Loading Screen
+// Loading 
 .loading-screen {
   @include flex-center;
   position: fixed;
@@ -183,7 +183,6 @@ $transition-duration: 0.3s;
   }
 }
 
-// Website Layout
 .website {
   min-height: 100vh;
   background-color: $background-color;
@@ -251,9 +250,12 @@ $transition-duration: 0.3s;
 }
 
 .main-content {
-  padding-top: 64px; /* 為導航列預留高度，具體高度與導航列一致 */
-  min-height: calc(100vh - 200px); /* 確保頁面填滿剩餘空間 */
-  box-sizing: border-box; /* 包括邊框和內邊距 */
+  padding-top: 64px;
+  /* 為導航列預留高度，具體高度與導航列一致 */
+  min-height: calc(100vh - 200px);
+  /* 確保頁面填滿剩餘空間 */
+  box-sizing: border-box;
+  /* 包括邊框和內邊距 */
 }
 
 .navbar {
@@ -282,7 +284,7 @@ $transition-duration: 0.3s;
   }
 }
 
-/* Toggle Button */
+/* 導覽列按鈕 */
 .nav-toggle {
   width: 48px;
   height: 48px;
@@ -298,17 +300,18 @@ $transition-duration: 0.3s;
   padding: 0;
 }
 
-/* Diamond Shape - 加粗邊框 */
+/* 導覽列圖案 */
 .diamond {
-  width: 24px;
-  height: 24px;
-  border: 4px solid #006400;
+  width: 16px;
+  height: 16px;
+  border: 6px solid #006400;
+  border-radius: 5px;
   /* 加粗邊框 */
   transform: rotate(45deg);
   background: transparent;
 }
 
-/* Navigation Menu */
+/* 導覽列 Menu */
 .nav-menu {
   background: white;
   border-radius: 12px;
@@ -357,31 +360,47 @@ $transition-duration: 0.3s;
   margin-left: 240px;
 }
 
-// Carousel
-.carousel {
-  display: flex;
+// 首頁
+/* 主視覺圖樣式 */
+.main-visual {
   width: 100%;
-  /* 滿足主要內容區域寬度 */
-  height: 300px;
-  /* 固定高度，可根據需求調整 */
-  position: relative;
+  height: 400px; /* 可根據需要調整高度 */
+  overflow: hidden;
 
-  .slide {
-    min-width: 100%;
-    transition: transform 0.5s ease-in-out;
-    opacity: 0;
-    position: absolute;
+  .main-visual-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+// Carousel
+.carousel-section {
+  margin-top: 20px; /* 與主視覺圖分開 */
+  padding: 20px 0;
+  background-color: #f5f5f5;
 
+  .carousel {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 
-    &.active {
-      opacity: 1;
+    .slide {
+      width: 300px;
+      height: 200px;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
     }
 
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 8px;
+    .slide.active {
+      transform: scale(1.1);
+      transition: transform 0.5s;
     }
   }
 }
@@ -392,8 +411,40 @@ $transition-duration: 0.3s;
   grid-template-columns: repeat(2, 1fr);
   gap: 32px;
 
-  .twitter-feed,
+  .twitter-feed {
+    max-width: 800px; /* 限制整個推廣區域的寬度 */
+    margin: 0 auto; /* 置中 */
+    padding: 20px;
+    background-color: #f9f9f9; /* 添加背景色提升可讀性 */
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  
+    h2 {
+      text-align: center;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+  
+    .twitter-content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      overflow-y: auto; /* 允許垂直滾動 */
+      max-height: 400px; /* 限制推文區域高度 */
+    }
+  
+    .tweet-item {
+      margin: 0 auto;
+      max-width: 600px; /* 限制推文的最大寬度 */
+      iframe {
+        width: 100% !important; /* 確保推文自適應父容器 */
+        max-width: 100%;
+      }
+    }
+  }
+
   .announcements {
+    margin: 20px 0;
     background-color: white;
     padding: 16px;
     border-radius: 8px;
@@ -406,10 +457,7 @@ $transition-duration: 0.3s;
     }
   }
 
-  .twitter-content {
-    height: 256px;
-    background-color: $background-color;
-    border-radius: 8px;
+  
   }
 
   .updates-list {
@@ -424,7 +472,7 @@ $transition-duration: 0.3s;
       }
     }
   }
-}
+
 
 // Social Links
 .social-links {
@@ -623,9 +671,10 @@ $transition-duration: 0.3s;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 450px; /* 確保高度適中 */
+    height: 450px;
+    /* 確保高度適中 */
     overflow: hidden;
-  
+
     .carousel-item {
       position: absolute;
       top: 20%;
@@ -634,16 +683,17 @@ $transition-duration: 0.3s;
       width: 40%;
       margin: 0 10px;
       text-align: center;
-  
+
       img {
         width: 100%;
         height: auto;
         border-radius: 10px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         transition: transform 0.5s ease-in-out;
-        cursor: pointer; /* 鼠標變為指針，提示可點擊 */
+        cursor: pointer;
+        /* 鼠標變為指針，提示可點擊 */
       }
-  
+
       h3 {
         margin-top: 1rem;
         font-size: 1rem;
@@ -651,21 +701,24 @@ $transition-duration: 0.3s;
         transition: opacity 0.5s ease-in-out;
       }
     }
-  
+
     .carousel-item.active {
-      transform: translateX(0px) scale(1); /* 中間卡片放大並居中 */
+      transform: translateX(0px) scale(1);
+      /* 中間卡片放大並居中 */
       opacity: 1;
       z-index: 2;
     }
-  
+
     .carousel-item:not(.active) {
       opacity: 0.5;
-      transform: scale(0.9); /* 左右卡片縮小 */
+      transform: scale(0.9);
+      /* 左右卡片縮小 */
     }
-  
+
     .carousel-button {
       position: absolute;
-      top: 45%; /* 調整箭頭與圖片對齊 */
+      top: 45%;
+      /* 調整箭頭與圖片對齊 */
       transform: translateY(-50%);
       background: rgba(0, 0, 0, 0.5);
       color: #fff;
@@ -674,17 +727,17 @@ $transition-duration: 0.3s;
       cursor: pointer;
       padding: 1rem;
       z-index: 10;
-  
+
       &.prev {
         left: 20px;
       }
-  
+
       &.next {
         right: 20px;
       }
     }
   }
-  
+
   // 最新消息區域
   .announcement-section {
     margin-bottom: 2rem;
@@ -842,25 +895,34 @@ $transition-duration: 0.3s;
             display: flex;
             justify-content: space-between;
             gap: 0.5rem;
+
             .type {
               color: #4b5563;
             }
+
             .character-tag {
-              display:inline-block;
+              display: inline-block;
               background-color: #f3f4f6;
-              padding: 0.5rem 0.5rem; /* 減少上下和左右的 padding */
-              border-radius: 12px; /* 更小的橢圓形 */
-              font-size: 1rem; /* 更小的字體 */
+              padding: 0.5rem 0.5rem;
+              /* 減少上下和左右的 padding */
+              border-radius: 12px;
+              /* 更小的橢圓形 */
+              font-size: 1rem;
+              /* 更小的字體 */
               color: #4b5563;
-              line-height: 1; /* 保持文字高度緊湊 */
-              margin-left: 0.5rem; /* 和價格保持距離 */
-              white-space: nowrap; /* 防止換行 */
+              line-height: 1;
+              /* 保持文字高度緊湊 */
+              margin-left: 0.5rem;
+              /* 和價格保持距離 */
+              white-space: nowrap;
+              /* 防止換行 */
             }
 
             .price {
               color: #dc2626;
               font-weight: 600;
-              font-size: 1rem; /* 確保價格大小適中 */
+              font-size: 1rem;
+              /* 確保價格大小適中 */
             }
           }
         }
@@ -873,12 +935,15 @@ $transition-duration: 0.3s;
 .video-page {
   display: flex;
   flex-direction: column;
-  height: 100vh; /* 讓頁面填滿整個視窗高度 */
-  width: 100vw; /* 讓頁面填滿整個視窗寬度 */
+  height: 100vh;
+  /* 讓頁面填滿整個視窗高度 */
+  width: 100vw;
+  /* 讓頁面填滿整個視窗寬度 */
   margin: 0;
 
   .video-player {
-    flex: 1; /* 讓影片區域填滿剩餘空間 */
+    flex: 1;
+    /* 讓影片區域填滿剩餘空間 */
     display: flex;
     flex-direction: column;
     justify-content: center;
