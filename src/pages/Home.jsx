@@ -6,9 +6,9 @@ const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
-    { id: 1, title: "Event 1", image: "/ThatsHasaSa/images/Home/mix/Home-banner.jpg" },
-    { id: 2, title: "Event 2", image: "/ThatsHasaSa/images/Home/mix/Hesa.JPG" },
-    { id: 3, title: "Event 3", image: "/ThatsHasaSa/images/Home/mix/Chi.JPG" }
+    { id: 1, title: "Event 1", image: "/ThatsHesaSa/images/Home/mix/Home-banner.jpg" },
+    { id: 2, title: "Event 2", image: "/ThatsHesaSa/images/Home/mix/Hesa.JPG" },
+    { id: 3, title: "Event 3", image: "/ThatsHesaSa/images/Home/mix/Chi.JPG" }
   ];
 
   useEffect(() => {

@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://chocofantasy.github.io/ThatsHasaSa/", 
+  "homepage": "https://chocofantasy.github.io/ThatsHesaSa/", 
   "scripts": {
     "dev": "vite",
     "build": "vite build",

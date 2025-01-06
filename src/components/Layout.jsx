@@ -76,7 +76,7 @@ function Layout() {
           {/* 音頻元素 */}
           <audio
             ref={audioRef}
-            src="/ThatsHasaSa/audio/MUSIC.mp3" // 替換為你的音樂檔案路徑
+            src="/ThatsHesaSa/audio/MUSIC.mp3" // 替換為你的音樂檔案路徑
             loop // 設置循環播放
           />
           <button
@@ -85,7 +85,7 @@ function Layout() {
           >
             <img
               src={
-                isPlaying ? "/ThatsHasaSa/images/Home/Volume-On.svg" : "/ThatsHasaSa/images/Home/Volume-On.svg"
+                isPlaying ? "/ThatsHesaSa/images/Home/Volume-On.svg" : "/ThatsHesaSa/images/Home/Volume-On.svg"
               }
               alt={isPlaying ? "Volume On" : "Volume Off"}
             />
@@ -125,28 +125,28 @@ function Layout() {
           <a href="https://www.facebook.com/HesaKizenn" target="_blank"
             rel="noopener noreferrer">
             <img
-              src="/ThatsHasaSa/images/Home/icon-sns-facebook.svg"
+              src="/ThatsHesaSa/images/Home/icon-sns-facebook.svg"
               alt="Facebook"
             />
           </a>
           <a href="https://x.com/Hesa_chisato" target="_blank"
             rel="noopener noreferrer">
             <img
-              src="/ThatsHasaSa/images/Home/icon-sns-youtube.svg"
+              src="/ThatsHesaSa/images/Home/icon-sns-youtube.svg"
               alt="YouTube"
             />
           </a>
           <a href="https://www.instagram.com/hesa_chisato?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"
             rel="noopener noreferrer">
             <img
-              src="/ThatsHasaSa/images/Home/icon-sns-IG.svg"
+              src="/ThatsHesaSa/images/Home/icon-sns-IG.svg"
               alt="Instagram"
             />
           </a>
           <a href="https://www.youtube.com/@Hesakizenn" target="_blank"
             rel="noopener noreferrer">
             <img
-              src="/ThatsHasaSa/images/Home/icon-sns-youtube.svg"
+              src="/ThatsHesaSa/images/Home/icon-sns-youtube.svg"
               alt="YouTube"
             />
           </a>
@@ -172,10 +172,10 @@ function Layout() {
                 </a>
                 <a href="#">
 
-                  <img src="/ThatsHasaSa/images/Home/icon-sns-IG.svg" alt="Instagram" />
+                  <img src="/ThatsHesaSa/images/Home/icon-sns-IG.svg" alt="Instagram" />
                 </a>
                 <a href="#">
-                  <img src="/ThatsHasaSa/images/Home/icon-sns-youtube.svg" alt="YouTube" />
+                  <img src="/ThatsHesaSa/images/Home/icon-sns-youtube.svg" alt="YouTube" />
                 </a>
               </div>
             </div>
