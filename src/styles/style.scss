@@ -183,15 +183,21 @@ $transition-duration: 0.3s;
   }
 }
 
-.website {
+.website-container {
   min-height: 100vh;
   background-color: $background-color;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  position: relative;
 }
 
 // Header
 .header {
   position: fixed;
   top: 0;
+  left:0;
+  right: 0;
   width: 100%;
   height: $header-height;
   background-color: white;
@@ -407,12 +413,13 @@ $transition-duration: 0.3s;
 
 // Content Grid
 .content-grid {
+
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 32px;
 
   .twitter-feed {
-    max-width: 800px; /* 限制整個推廣區域的寬度 */
+    max-width: 1000px; /* 限制整個推廣區域的寬度 */
     margin: 0 auto; /* 置中 */
     padding: 20px;
     background-color: #f9f9f9; /* 添加背景色提升可讀性 */
@@ -431,48 +438,79 @@ $transition-duration: 0.3s;
       gap: 20px;
       overflow-y: auto; /* 允許垂直滾動 */
       max-height: 400px; /* 限制推文區域高度 */
+      max-height: 400px; /* 限制推文區域高度 */
     }
   
     .tweet-item {
       margin: 0 auto;
-      max-width: 600px; /* 限制推文的最大寬度 */
+      max-width: 900px; /* 限制推文的最大寬度 */
       iframe {
         width: 100% !important; /* 確保推文自適應父容器 */
         max-width: 100%;
       }
     }
   }
-
-  .announcements {
-    margin: 20px 0;
-    background-color: white;
-    padding: 16px;
-    border-radius: 8px;
-    @include shadow;
-
-    h2 {
-      font-size: 1.25rem;
-      font-weight: bold;
-      margin-bottom: 16px;
-    }
-  }
-
+}
+.news-section {
   
+  .news-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* 單欄式 */
+    gap: 16px;
+    max-height: 400px; /* 限制區塊高度 */
+    overflow-y: auto; /* 超出時加上滾動條 */
   }
 
-  .updates-list {
-    .update-item {
-      padding: 16px;
-      background-color: $background-color;
-      border-radius: 8px;
-      margin-bottom: 16px;
+  .news-card {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    background-color: #f3f4f6;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
-      &:last-child {
-        margin-bottom: 0;
+    .news-image img {
+      max-width: 80px;
+      border-radius: 4px;
+      object-fit: cover;
+    }
+
+    .news-content {
+      flex: 1;
+      .news-date {
+        font-size: 0.875rem;
+        color: #6b7280;
+      }
+
+      h3 {
+        font-size: 1rem;
+        margin: 5px 0;
+      }
+
+      p {
+        font-size: 0.875rem;
+        color: #4b5563;
       }
     }
   }
+}
 
+// RWD 最新消息
+@media (max-width: 768px) {
+  .news-section {
+    padding: 20px;
+
+    .news-item {
+      .news-content {
+        padding: 16px;
+      }
+
+      .news-image {
+        height: 160px;
+      }
+    }
+  }
+}
 
 // Social Links
 .social-links {
@@ -1009,9 +1047,9 @@ $transition-duration: 0.3s;
 
 // Footer
 .footer {
-  background-color: white;
-  margin-top: 48px;
-  padding: 32px;
+  background-color: #13775A; /* 背景顏色 */
+  color: #ffffff; /* 字體顏色 */
+  padding: 20px;
 
   .footer-content {
     max-width: 1200px;
@@ -1021,19 +1059,22 @@ $transition-duration: 0.3s;
   .footer-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
-    margin-bottom: 32px;
+    gap: 8px;
+    margin-bottom: 16px;
   }
 
   .footer-section {
-    h3 {
-      font-weight: bold;
-      margin-bottom: 16px;
-    }
+    flex: 1;
+      h3 {
+        font-size: 1rem;
+      }
+      p {
+        font-size: 0.8rem;
+      }
 
     .social-icons {
       display: flex;
-      gap: 16px;
+      gap: 8px;
 
       a {
         width: 36px;
@@ -1058,7 +1099,8 @@ $transition-duration: 0.3s;
 
   .footer-bottom {
     text-align: center;
-    padding-top: 32px;
+    padding-top: 12px;
     border-top: 1px solid $background-color;
   }
 }
+

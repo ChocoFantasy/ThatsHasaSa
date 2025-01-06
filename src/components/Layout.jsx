@@ -26,7 +26,7 @@ function Layout() {
             // 自動播放成功
             setIsPlaying(true);
           })
-          .catch(error => {
+          .catch((error) => {
             // 自動播放失敗（瀏覽器可能阻止）
             console.log("自動播放被阻止:", error);
             setIsPlaying(false);
@@ -70,9 +70,9 @@ function Layout() {
             <img src={`/ThatsSaHesa/images/Home/LOGO.jpg`} alt="Logo" />
           </Link>
         </div>
-  
+
         {/* 音樂按鈕 */}
-        <div>
+        <div className="header-right">
           {/* 音頻元素 */}
           <audio
             ref={audioRef}
@@ -85,13 +85,14 @@ function Layout() {
           >
             <img
               src={
-                isPlaying ? "/ThatsSaHesa/images/Home/Volume-On.svg" : "/ThatsSaHesa/images/Home/Volume-On.svg"
+                isPlaying
+                  ? "/ThatsSaHesa/images/Home/Volume-On.svg"
+                  : "/ThatsSaHesa/images/Home/Volume-On.svg"
               }
               alt={isPlaying ? "Volume On" : "Volume Off"}
             />
           </button>
         </div>
-
       </header>
       {/* 共用的內容 */}
       <div className="main-content">
@@ -99,6 +100,7 @@ function Layout() {
           <button
             className="nav-toggle"
             onClick={() => setIsNavbarOpen(!isNavbarOpen)}
+            aria-label="Toggle navigation"
           >
             <div className="diamond"></div>
           </button>
@@ -108,12 +110,16 @@ function Layout() {
               <Link
                 key={item.title}
                 to={item.to}
-                className={`nav-item ${location.pathname === item.to ? 'active' : ''}`}
+                className={`nav-item ${
+                  location.pathname === item.to ? "active" : ""
+                }`}
               >
                 {item.title}
               </Link>
             ))}
           </div>
+          <div className="grass-decoration left"></div>
+          <div className="grass-decoration right"></div>
         </nav>
 
         {/*  <Outlet /> {/* 這裡會渲染子路由的內容 */}
@@ -121,35 +127,67 @@ function Layout() {
           <Outlet />
         </main>
         {/* 浮動連結到專屬社群 */}
-        <div className="social-links" >
-          <a href="https://www.facebook.com/HesaKizenn" target="_blank"
-            rel="noopener noreferrer">
-            <img
-              src="/ThatsSaHesa/images/Home/icon-sns-facebook.svg"
-              alt="Facebook"
-            />
+        {/* <div className="social-links">
+          <a
+            href="https://www.facebook.com/HesaKizenn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="/ThatsSaHesa/images/Home/FB.jpg" alt="Facebook" />
           </a>
-          <a href="https://x.com/Hesa_chisato" target="_blank"
-            rel="noopener noreferrer">
-            <img
-              src="/ThatsSaHesa/images/Home/icon-sns-youtube.svg"
-              alt="YouTube"
-            />
+          <a
+            href="https://x.com/Hesa_chisato"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="/ThatsSaHesa/images/Home/X.jpg" alt="X" />
           </a>
-          <a href="https://www.instagram.com/hesa_chisato?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"
-            rel="noopener noreferrer">
-            <img
-              src="/ThatsSaHesa/images/Home/icon-sns-IG.svg"
-              alt="Instagram"
-            />
+          <a
+            href="https://www.instagram.com/hesa_chisato?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="/ThatsSaHesa/images/Home/IG.jpg" alt="Instagram" />
           </a>
-          <a href="https://www.youtube.com/@Hesakizenn" target="_blank"
-            rel="noopener noreferrer">
-            <img
-              src="/ThatsSaHesa/images/Home/icon-sns-youtube.svg"
-              alt="YouTube"
-            />
+          <a
+            href="https://home.gamer.com.tw/profile/index.php?owner=kuso12336"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="/ThatsSaHesa/images/Home/Baha.jpg" alt="Bahamut" />
           </a>
+        </div> */}
+        <div className="social-links-container">
+          <div className="social-links">
+            <a
+              href="https://www.facebook.com/HesaKizenn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="/ThatsSaHesa/images/Home/FB.jpg" alt="Facebook" />
+            </a>
+            <a
+              href="https://x.com/Hesa_chisato"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="/ThatsSaHesa/images/Home/X.jpg" alt="X" />
+            </a>
+            <a
+              href="https://www.instagram.com/hesa_chisato"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="/ThatsSaHesa/images/Home/IG.jpg" alt="Instagram" />
+            </a>
+            <a
+              href="https://home.gamer.com.tw/profile/index.php?owner=kuso12336"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="/ThatsSaHesa/images/Home/Baha.jpg" alt="Bahamut" />
+            </a>
+          </div>
         </div>
       </div>
       {/* 共用的頁尾 */}
@@ -164,18 +202,24 @@ function Layout() {
               <h3>Social Media</h3>
               <div className="social-icons">
                 <a href="#">
-
                   <img
-                    src={`${import.meta.env.BASE_URL}/images/Home/icon-sns-facebook.svg`}
+                    src={`${
+                      import.meta.env.BASE_URL
+                    }/images/Home/icon-sns-facebook.svg`}
                     alt="Facebook"
                   />
                 </a>
                 <a href="#">
-
-                  <img src="/ThatsSaHesa/images/Home/icon-sns-IG.svg" alt="Instagram" />
+                  <img
+                    src="/ThatsSaHesa/images/Home/icon-sns-IG.svg"
+                    alt="Instagram"
+                  />
                 </a>
                 <a href="#">
-                  <img src="/ThatsSaHesa/images/Home/icon-sns-youtube.svg" alt="YouTube" />
+                  <img
+                    src="/ThatsSaHesa/images/Home/icon-sns-youtube.svg"
+                    alt="YouTube"
+                  />
                 </a>
               </div>
             </div>
