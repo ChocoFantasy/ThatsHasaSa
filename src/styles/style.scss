@@ -7,7 +7,6 @@
 
 /* 重置字體 */
 
-
 body {
   position: relative;
   font-family: $Chinese;
@@ -245,109 +244,153 @@ a {
   /* 包括邊框和內邊距 */
 
   //導覽列
-  .navbar {
+
+  .navbar-container {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 200px;
-    /* 固定寬度 */
-    height: 100%;
-    /* 滿屏高度 */
-    transform: translateY(-50%);
-    transition: transform 0.3s ease;
-    z-index: 999;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-
-    &.open {
-      transform: translateX(0);
-      /* 展開狀態 */
-    }
-
-    &:not(.open) {
-      transform: translateX(50%);
-      /* 收合狀態 */
-    }
-  }
-
-  /* 導覽列圖案 */
-  .diamond {
-    width: 16px;
-    height: 16px;
-    border: 6px solid #006400;
-    border-radius: 5px;
-    /* 加粗邊框 */
-    transform: rotate(45deg);
-    background: transparent;
-  }
-
-  /* 導覽列按鈕 */
-  .nav-toggle {
-    width: 48px;
-    height: 48px;
-    border: none;
-    background: white;
-    border-radius: 12px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    z-index: 2;
-    padding: 0;
-  }
-
-
-
-  /* 導覽列 Menu */
-  .nav-menu {
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    width: 0;
-    opacity: 0;
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-  }
-
-  .navbar.open .nav-menu {
-    width: 160px;
-    opacity: 1;
-    padding: 8px;
-  }
-
-  .nav-item {
-    padding: 12px 24px;
-    text-decoration: none;
-    color: #666;
-    transition: all 0.2s ease;
+    top: 10px;
+    left: 10px;
+    width: 140px;
+    /* 限制寬度 */
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    margin: 2px 0;
-    white-space: nowrap;
+    padding: 10px 0;
+    z-index: 999;
+    animation: fadeIn 0.3s ease-in-out;
+    /* 添加過渡動畫 */
   }
 
-  .nav-item:hover {
-    background-color: #006400;
-    color: white;
+  /* 左右箭頭容器 */
+  .navbar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
   }
 
-  .nav-item.active {
-    background-color: #006400;
-    color: white;
+  /* 左右箭頭按鈕 */
+  .nav-toggle-left,
+  .nav-toggle-right {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    height: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .nav-icon {
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+      position: relative;
+
+      /* 初始菱形樣式 */
+      &.diamond {
+        background-color: #008000;
+        clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+        transition: transform 0.3s ease, opacity 0.3s ease;
+      }
+
+      /* 左箭頭樣式 */
+      &.arrow-left {
+        width: 12px;
+        /* 控制箭頭大小 */
+        height: 12px;
+        border: solid #008000;
+        /* 箭頭顏色 */
+        border-width: 0 2px 2px 0;
+        /* 只顯示右下部分 */
+        transform: rotate(135deg);
+        /* 左箭頭方向 */
+        transition: transform 0.3s ease, opacity 0.3s ease;
+      }
+
+      /* 右箭頭樣式 */
+      &.arrow-right {
+        width: 12px;
+        /* 控制箭頭大小 */
+        height: 12px;
+        border: solid #008000;
+        /* 箭頭顏色 */
+        border-width: 0 2px 2px 0;
+        /* 只顯示右下部分 */
+        transform: rotate(-45deg);
+        /* 右箭頭方向 */
+        transition: transform 0.3s ease, opacity 0.3s ease;
+      }
+    }
   }
 
-  // <Outlet /> {/* 這裡會渲染子路由的內容
-  .content {
-    transition: margin-left 0.3s ease;
+
+  /* 導航選單 */
+  .nav-menu {
+    margin-top: 10px;
+    text-align: center;
+
+    .nav-item {
+      display: block;
+      color: #333;
+      text-decoration: none;
+      font-size: 16px;
+      margin: 10px 0;
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: #008000;
+      }
+
+      &.active {
+        background-color: #008000;
+        color: white;
+        border-radius: 4px;
+      }
+
+      hr {
+        margin: 5px auto;
+        width: 50%;
+        height: 2px;
+        background: #333;
+        border: none;
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+      }
+
+      &:hover hr {
+        transform: scaleX(1);
+      }
+    }
   }
 
-  .content.navbar-open {
-    margin-left: 240px;
+  /* 菱形圖案動畫 */
+  .nav-toggle-left .diamond {
+    animation: rotateIn 0.3s ease-in-out;
   }
+
+  @keyframes rotateIn {
+    0% {
+      transform: rotate(45deg) scale(0.8);
+    }
+
+    100% {
+      transform: rotate(0deg) scale(1);
+    }
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+
 }
 
 // 首頁
@@ -681,7 +724,7 @@ a {
     border: none;
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
-    overflow: hidden;
+    overflow: visible;
 
     // &.active {
     //   border: 15px solid var(--character-primary); 

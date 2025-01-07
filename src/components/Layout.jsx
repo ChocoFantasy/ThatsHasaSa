@@ -96,31 +96,54 @@ function Layout() {
       </header>
       {/* 共用的內容 */}
       <div className="main-content">
-        <nav className={`navbar ${isNavbarOpen ? "open" : ""}`}>
-          <button
-            className="nav-toggle"
-            onClick={() => setIsNavbarOpen(!isNavbarOpen)}
-            aria-label="Toggle navigation"
-          >
-            <div className="diamond"></div>
-          </button>
+   {/* 導航欄 */}
+   {isNavbarOpen && (
+        <div className="navbar-container">
+          {/* 左右箭頭 */}
+          <div className="navbar-header">
+            <button
+              className="nav-toggle-left"
+              onClick={() => setIsNavbarOpen(false)}
+              aria-label="Close navigation"
+            >
+              <div className="nav-icon arrow-left"></div>
+            </button>
+            <button
+              className="nav-toggle-right"
+              onClick={() => setIsNavbarOpen(false)}
+              aria-label="Close navigation"
+            >
+              <div className="nav-icon arrow-right"></div>
+            </button>
+          </div>
 
-          <div className="nav-menu">
+          {/* 導航選單 */}
+          <nav className="nav-menu">
             {navItems.map((item) => (
               <Link
                 key={item.title}
                 to={item.to}
-                className={`nav-item ${
-                  location.pathname === item.to ? "active" : ""
-                }`}
+                className={`nav-item ${location.pathname === item.to ? "active" : ""}`}
               >
                 {item.title}
+                <hr />
               </Link>
             ))}
-          </div>
-          <div className="grass-decoration left"></div>
-          <div className="grass-decoration right"></div>
-        </nav>
+          </nav>
+        </div>
+      )}
+
+      {/* 初始菱形圖案按鈕 */}
+      {!isNavbarOpen && (
+        <button
+          className="nav-toggle-left"
+          onClick={() => setIsNavbarOpen(true)}
+          aria-label="Toggle navigation"
+        >
+          <div className="nav-icon diamond"></div>
+        </button>
+      )}
+
 
         {/*  <Outlet /> {/* 這裡會渲染子路由的內容 */}
         <main className={`content ${isNavbarOpen ? "navbar-open" : ""}`}>
@@ -173,9 +196,8 @@ function Layout() {
               <div className="social-icons">
                 <a href="#">
                   <img
-                    src={`${
-                      import.meta.env.BASE_URL
-                    }/images/Home/icon-sns-facebook.svg`}
+                    src={`${import.meta.env.BASE_URL
+                      }/images/Home/icon-sns-facebook.svg`}
                     alt="Facebook"
                   />
                 </a>
