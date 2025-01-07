@@ -63,14 +63,16 @@ const Home = () => {
 
   return (
     <>
-      <div className="Home">
+      <div className="home-container">
         {/* 主視覺圖 */}
+        <div className="main-visual-section">
         <div className="main-visual">
           <img
             src="/ThatsSaHesa/images/Home/Main-Vision.jpg"
             alt="Main Visual"
             className="main-visual-image"
           />
+        </div>
         </div>
 
         {/* 活動輪播圖 */}
