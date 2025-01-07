@@ -199,7 +199,7 @@ function Layout() {
             </div>
           </div>
           <div className="footer-bottom">
-            <p>&copy; 2025 All Rights Reserved</p>
+            <p>Copyright&copy; 2025 All Rights Reserved 學生練習作品</p>
           </div>
         </div>
       </footer>
