@@ -13,7 +13,7 @@ const Loading = () => {
         <span className="dot"></span>
         <span className="dot"></span>
         <span className="dot"></span>
-        <p>載入中...</p>
+        <p>Loading...</p>
       </div>
     </div>
   );

@@ -127,36 +127,6 @@ function Layout() {
           <Outlet />
         </main>
         {/* 浮動連結到專屬社群 */}
-        {/* <div className="social-links">
-          <a
-            href="https://www.facebook.com/HesaKizenn"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src="/ThatsSaHesa/images/Home/FB.jpg" alt="Facebook" />
-          </a>
-          <a
-            href="https://x.com/Hesa_chisato"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src="/ThatsSaHesa/images/Home/X.jpg" alt="X" />
-          </a>
-          <a
-            href="https://www.instagram.com/hesa_chisato?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src="/ThatsSaHesa/images/Home/IG.jpg" alt="Instagram" />
-          </a>
-          <a
-            href="https://home.gamer.com.tw/profile/index.php?owner=kuso12336"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src="/ThatsSaHesa/images/Home/Baha.jpg" alt="Bahamut" />
-          </a>
-        </div> */}
         <div className="social-links-container">
           <div className="social-links">
             <a
