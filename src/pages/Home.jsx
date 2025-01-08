@@ -10,17 +10,17 @@ const Home = () => {
     {
       id: 1,
       title: "Event 1",
-      image: `${import.meta.env.BASE_URL}/images/mix/Home-banner.jpg`,
+      image: `./images/mix/Home-banner.jpg`,
     },
     {
       id: 2,
       title: "Event 2",
-      image: `${import.meta.env.BASE_URL}/images/mix/Hesa.JPG`,
+      image: `./images/mix/Hesa.JPG`,
     },
     {
       id: 3,
       title: "Event 3",
-      image: `${import.meta.env.BASE_URL}/images/mix/Chi.JPG`,
+      image: `./images/mix/Chi.JPG`,
     },
   ];
 
@@ -36,20 +36,20 @@ const Home = () => {
       date: "2025/01/06",
       title: "新作發布！《黑砂的日常》第三集現已上線",
       content: "最新一集探討了黑砂如何與朋友們在日常生活中創造歡樂。",
-      image: "/WhatTheHesa/images/Home/Loading.jpg",
+      image: "./images/Home/Loading.jpg",
     },
     {
       date: "2025/01/04",
       title: "週末簽名會預告",
       content:
         "本週末將在台北舉辦簽名會，歡迎大家來交流！地點：台北市信義區...",
-      image: "/WhatTheHesa/images/Home/Loading.jpg",
+      image: "./images/Home/Loading.jpg",
     },
     {
       date: "2025/01/02",
       title: "新年特別企劃開跑",
       content: "新年限定周邊商品即將發售，敬請期待！",
-      image: "/WhatTheHesa/images/Home/Loading.jpg",
+      image: "./images/Home/Loading.jpg",
     },
   ];
 
@@ -68,7 +68,7 @@ const Home = () => {
         <div className="main-visual-section">
         <div className="main-visual">
           <img
-            src="/WhatTheHesa/images/Home/Main-Vision.jpg"
+            src="./images/Home/Main-Vision.jpg"
             alt="Main Visual"
             className="main-visual-image"
           />

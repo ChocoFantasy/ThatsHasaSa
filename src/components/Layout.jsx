@@ -67,7 +67,7 @@ function Layout() {
         {/* Logo 放置區 */}
         <div className="logo">
           <Link to="/Home">
-            <img src={`/WhatTheHesa/images/Home/LOGO.jpg`} alt="Logo" />
+            <img src={`./images/LOGO/LOGO.jpg`} alt="Logo" />
           </Link>
         </div>
 
@@ -76,7 +76,7 @@ function Layout() {
           {/* 音頻元素 */}
           <audio
             ref={audioRef}
-            src="/WhatTheHesa/audio/MUSIC.mp3" // 替換為你的音樂檔案路徑
+            src="/audio/MUSIC.mp3" // 替換為你的音樂檔案路徑
             loop // 設置循環播放
           />
           <button
@@ -86,8 +86,8 @@ function Layout() {
             <img
               src={
                 isPlaying
-                  ? "/WhatTheHesa/images/Home/Volume-On.svg"
-                  : "/WhatTheHesa/images/Home/Volume-On.svg"
+                  ? "./images/Home/Volume-On.svg"
+                  : "./images/Home/Volume-On.svg"
               }
               alt={isPlaying ? "Volume On" : "Volume Off"}
             />
@@ -157,28 +157,28 @@ function Layout() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src="/WhatTheHesa/images/Home/FB.jpg" alt="Facebook" />
+              <img src="./images/Home/FB.jpg" alt="Facebook" />
             </a>
             <a
               href="https://x.com/Hesa_chisato"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src="/WhatTheHesa/images/Home/X.jpg" alt="X" />
+              <img src="./images/Home/X.jpg" alt="X" />
             </a>
             <a
               href="https://www.instagram.com/hesa_chisato"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src="/WhatTheHesa/images/Home/IG.jpg" alt="Instagram" />
+              <img src="./images/Home/IG.jpg" alt="Instagram" />
             </a>
             <a
               href="https://home.gamer.com.tw/profile/index.php?owner=kuso12336"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src="/WhatTheHesa/images/Home/Baha.jpg" alt="Bahamut" />
+              <img src="./images/Home/Baha.jpg" alt="Bahamut" />
             </a>
           </div>
         </div>
@@ -197,19 +197,19 @@ function Layout() {
                 <a href="#">
                   <img
                     src={`${import.meta.env.BASE_URL
-                      }/images/Home/icon-sns-facebook.svg`}
+                      }./images/Home/icon-sns-facebook.svg`}
                     alt="Facebook"
                   />
                 </a>
                 <a href="#">
                   <img
-                    src="/WhatTheHesa/images/Home/icon-sns-IG.svg"
+                    src="./images/Home/icon-sns-IG.svg"
                     alt="Instagram"
                   />
                 </a>
                 <a href="#">
                   <img
-                    src="/WhatTheHesa/images/Home/icon-sns-youtube.svg"
+                    src="./images/Home/icon-sns-youtube.svg"
                     alt="YouTube"
                   />
                 </a>
@@ -221,7 +221,7 @@ function Layout() {
             </div>
           </div>
           <div className="footer-bottom">
-            <p>Copyright&copy; 2025 All Rights Reserved 學生練習作品</p>
+            <p>Copyright&copy; Hesakizenn 2025 All Rights Reserved 學生練習作品</p>
           </div>
         </div>
       </footer>
