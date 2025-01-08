@@ -67,7 +67,7 @@ function Layout() {
         {/* Logo 放置區 */}
         <div className="logo">
           <Link to="/Home">
-            <img src={`/ThatsSaHesa/images/Home/LOGO.jpg`} alt="Logo" />
+            <img src={`/WhatTheHesa/images/Home/LOGO.jpg`} alt="Logo" />
           </Link>
         </div>
 
@@ -76,7 +76,7 @@ function Layout() {
           {/* 音頻元素 */}
           <audio
             ref={audioRef}
-            src="/ThatsSaHesa/audio/MUSIC.mp3" // 替換為你的音樂檔案路徑
+            src="/WhatTheHesa/audio/MUSIC.mp3" // 替換為你的音樂檔案路徑
             loop // 設置循環播放
           />
           <button
@@ -86,8 +86,8 @@ function Layout() {
             <img
               src={
                 isPlaying
-                  ? "/ThatsSaHesa/images/Home/Volume-On.svg"
-                  : "/ThatsSaHesa/images/Home/Volume-On.svg"
+                  ? "/WhatTheHesa/images/Home/Volume-On.svg"
+                  : "/WhatTheHesa/images/Home/Volume-On.svg"
               }
               alt={isPlaying ? "Volume On" : "Volume Off"}
             />
@@ -157,28 +157,28 @@ function Layout() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src="/ThatsSaHesa/images/Home/FB.jpg" alt="Facebook" />
+              <img src="/WhatTheHesa/images/Home/FB.jpg" alt="Facebook" />
             </a>
             <a
               href="https://x.com/Hesa_chisato"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src="/ThatsSaHesa/images/Home/X.jpg" alt="X" />
+              <img src="/WhatTheHesa/images/Home/X.jpg" alt="X" />
             </a>
             <a
               href="https://www.instagram.com/hesa_chisato"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src="/ThatsSaHesa/images/Home/IG.jpg" alt="Instagram" />
+              <img src="/WhatTheHesa/images/Home/IG.jpg" alt="Instagram" />
             </a>
             <a
               href="https://home.gamer.com.tw/profile/index.php?owner=kuso12336"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src="/ThatsSaHesa/images/Home/Baha.jpg" alt="Bahamut" />
+              <img src="/WhatTheHesa/images/Home/Baha.jpg" alt="Bahamut" />
             </a>
           </div>
         </div>
@@ -203,13 +203,13 @@ function Layout() {
                 </a>
                 <a href="#">
                   <img
-                    src="/ThatsSaHesa/images/Home/icon-sns-IG.svg"
+                    src="/WhatTheHesa/images/Home/icon-sns-IG.svg"
                     alt="Instagram"
                   />
                 </a>
                 <a href="#">
                   <img
-                    src="/ThatsSaHesa/images/Home/icon-sns-youtube.svg"
+                    src="/WhatTheHesa/images/Home/icon-sns-youtube.svg"
                     alt="YouTube"
                   />
                 </a>

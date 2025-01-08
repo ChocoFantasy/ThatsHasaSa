@@ -7,7 +7,7 @@ const Loading = () => {
       <div className="loading-animation">
         {/* 這裡可以是 LOGO 或轉圈動畫 */}
         <img
-          src="/ThatsSaHesa/images/Home/Loading.jpg" // 替換為你的 LOGO 或動畫圖片
+          src="/WhatTheHesa/images/Home/Loading.jpg" // 替換為你的 LOGO 或動畫圖片
           alt="Loading..."
         />
         <span className="dot"></span>
