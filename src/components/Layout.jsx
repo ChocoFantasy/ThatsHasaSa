@@ -67,7 +67,7 @@ function Layout() {
         {/* Logo 放置區 */}
         <div className="logo">
            {/* 如果使用 <HashRouter> 前端路由，路徑只要有Link to 記得前面加#，to="#/Home"。 */}
-          <Link to="/Home">
+          <Link to="#/Home">
             <img src={`./images/LOGO/LOGO_Word.png`} alt="Logo" />
           </Link>
         </div>
