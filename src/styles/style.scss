@@ -605,7 +605,7 @@ a {
   }
   
   .social-links img {
-    width: 55px; /* 圖標宽度 */
+    width: 55px; /* 圖標寬度 */
     height: 55px; /* 圖標高度 */
     object-fit: contain; /* 保持比例 */
   }
@@ -616,10 +616,10 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    border-radius: 20px; /* 與容器的圆角一樣 */
+    border-radius: 20px; /* 與容器的圓角一樣 */
     background-color: white;
     box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1); /* 增强立體感 */
-    z-index: -1; /* 确保在背景层 */
+    z-index: -1; /* 确保在背景層 */
   }
 }
 
