@@ -66,7 +66,7 @@ function Layout() {
       <header className="header">
         {/* Logo 放置區 */}
         <div className="logo">
-           {/* 如果使用 <HashRouter> 前端路由，路徑只要有Link to 記得前面加#，to="#/Home"。 */}
+          {/* 如果使用 <HashRouter> 前端路由，路徑只要有Link to 記得前面加#，to="#/Home"。 */}
           <Link to="#/Home">
             <img src={`./images/LOGO/LOGO_Word.png`} alt="Logo" />
           </Link>
@@ -97,54 +97,55 @@ function Layout() {
       </header>
       {/* 共用的內容 */}
       <div className="main-content">
-   {/* 導航欄 */}
-   {isNavbarOpen && (
-        <div className="navbar-container">
-          {/* 左右箭頭 */}
-          <div className="navbar-header">
-            <button
-              className="nav-toggle-left"
-              onClick={() => setIsNavbarOpen(false)}
-              aria-label="Close navigation"
-            >
-              <div className="nav-icon arrow-left"></div>
-            </button>
-            <button
-              className="nav-toggle-right"
-              onClick={() => setIsNavbarOpen(false)}
-              aria-label="Close navigation"
-            >
-              <div className="nav-icon arrow-right"></div>
-            </button>
-          </div>
-
-          {/* 導航選單 */}
-          <nav className="nav-menu">
-            {navItems.map((item) => (
-              <Link
-                key={item.title}
-                to={item.to}
-                className={`nav-item ${location.pathname === item.to ? "active" : ""}`}
+        {/* 導航欄 */}
+        {isNavbarOpen && (
+          <div className="navbar-container">
+            {/* 左右箭頭 */}
+            <div className="navbar-header">
+              <button
+                className="nav-toggle-left"
+                onClick={() => setIsNavbarOpen(false)}
+                aria-label="Close navigation"
               >
-                {item.title}
-                <hr />
-              </Link>
-            ))}
-          </nav>
-        </div>
-      )}
+                <div className="nav-icon arrow-left"></div>
+              </button>
+              <button
+                className="nav-toggle-right"
+                onClick={() => setIsNavbarOpen(false)}
+                aria-label="Close navigation"
+              >
+                <div className="nav-icon arrow-right"></div>
+              </button>
+            </div>
 
-      {/* 初始菱形圖案按鈕 */}
-      {!isNavbarOpen && (
-        <button
-          className="nav-toggle-left"
-          onClick={() => setIsNavbarOpen(true)}
-          aria-label="Toggle navigation"
-        >
-          <div className="nav-icon diamond"></div>
-        </button>
-      )}
+            {/* 導航選單 */}
+            <nav className="nav-menu">
+              {navItems.map((item) => (
+                <Link
+                  key={item.title}
+                  to={item.to}
+                  className={`nav-item ${
+                    location.pathname === item.to ? "active" : ""
+                  }`}
+                >
+                  {item.title}
+                  <hr />
+                </Link>
+              ))}
+            </nav>
+          </div>
+        )}
 
+        {/* 初始菱形圖案按鈕 */}
+        {!isNavbarOpen && (
+          <button
+            className="nav-toggle-left"
+            onClick={() => setIsNavbarOpen(true)}
+            aria-label="Toggle navigation"
+          >
+            <div className="nav-icon diamond"></div>
+          </button>
+        )}
 
         {/*  <Outlet /> {/* 這裡會渲染子路由的內容 */}
         <main className={`content ${isNavbarOpen ? "navbar-open" : ""}`}>
@@ -197,22 +198,17 @@ function Layout() {
               <div className="social-icons">
                 <a href="https://www.facebook.com/HesaKizenn">
                   <img
-                    src={`${import.meta.env.BASE_URL
-                      }./images/Home/icon-sns-facebook.svg`}
+                    src={`${
+                      import.meta.env.BASE_URL
+                    }./images/Home/icon-sns-facebook.svg`}
                     alt="Facebook"
                   />
                 </a>
                 <a href="https://www.instagram.com/hesa_chisato">
-                  <img
-                    src="./images/Home/icon-sns-IG.svg"
-                    alt="Instagram"
-                  />
+                  <img src="./images/Home/icon-sns-IG.svg" alt="Instagram" />
                 </a>
                 <a href="https://www.youtube.com/@Hesakizenn">
-                  <img
-                    src="./images/Home/icon-sns-youtube.svg"
-                    alt="YouTube"
-                  />
+                  <img src="./images/Home/icon-sns-youtube.svg" alt="YouTube" />
                 </a>
               </div>
             </div>
@@ -222,7 +218,9 @@ function Layout() {
             </div>
           </div>
           <div className="footer-bottom">
-            <p>Copyright&copy; Hesakizenn 2025 All Rights Reserved 學生練習作品</p>
+            <p>
+              Copyright&copy; Hesakizenn 2025 All Rights Reserved 學生練習作品
+            </p>
           </div>
         </div>
       </footer>
