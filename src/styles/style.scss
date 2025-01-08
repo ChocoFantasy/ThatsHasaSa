@@ -573,44 +573,57 @@ a {
   }
 }
 
-.social-links {
+// style.scss 中的社群連結樣式
+.social-links-container {
   position: fixed;
-  right: 16px;
-  top: 50%;
+  right: 0;
+  top: 50%; /* 垂直居中 */
   transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+  z-index: 100;
+  background-color: white; /* 白色 */
+  border-radius: 20px; /* 圓角 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  width: 80px; /* 寬度 */
 
-  a {
+  .social-links  {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    /* 確保圖片居中 */
-    width: 40px;
-    height: 40px;
+    justify-content: center;
+    width: 110px; 
+    height: 350px; 
+    background-color: white; /* 背景颜色 */
+    border-radius: 12px; /* 圆角邊框 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    gap: 19px; /* 圖片間距 */
+  }
+  
+  .social-links a:hover {
+    transform: scale(1.1); /* 放大 */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* 陰影 */
+  }
+  
+  .social-links img {
+    width: 55px; /* 圖標宽度 */
+    height: 55px; /* 圖標高度 */
+    object-fit: contain; /* 保持比例 */
+  }
+  .social-links-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px; /* 與容器的圆角一樣 */
     background-color: white;
-    border-radius: 999px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    /* 替換 @include shadow 陰影 */
-    color: $text-color;
-    transition: transform 0.3s;
-
-    &:hover {
-      transform: scale(1.2);
-      color: $primary-color;
-    }
-
-    img {
-      max-width: 100%;
-      /* 確保圖片不會超出父容器 */
-      max-height: 100%;
-      /* 確保圖片不會超出父容器 */
-      object-fit: contain;
-      /* 保持圖片比例 */
-    }
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1); /* 增强立體感 */
+    z-index: -1; /* 确保在背景层 */
   }
 }
+
+
 
 //角色介紹頁
 .character-page {
