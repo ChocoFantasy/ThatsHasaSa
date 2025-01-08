@@ -16,7 +16,7 @@ const Characters = () => {
         "沒有什麼是不可能的。",
         "相信自己的力量。"
       ],
-      image: "./images/mix/Hesa.JPG",
+      image: "./images/LOGO/hesa_logo_BU.png",
       theme: {
         primary: '#13775A',
         primaryTransparent: '#13775A33',
@@ -34,7 +34,7 @@ const Characters = () => {
         "讓我們一起守護這個世界。",
         "黑暗終將被驅散。"
       ],
-      image: "./images/mix/lili.JPG",
+      image: "./images/Profile/Stickers-without-words/ZZ_4.png",
       theme: {
         primary: '#CCB7FF',
         primaryTransparent: '#CCB7FF33',
@@ -52,7 +52,7 @@ const Characters = () => {
         "創新永不止步。",
         "知識就是力量。"
       ],
-      image: "./images/Shop/Coasters/Huanpei.jpg",
+      image: "./images/Profile/Stickers-without-words/Vanpe_1.png",
       theme: {
         primary: '#A6E5FF',
         primaryTransparent: '#A6E5FF33',
@@ -70,7 +70,7 @@ const Characters = () => {
         "團結就是力量。",
         "策略決定成敗。"
       ],
-      image: "./images/Shop/Coasters/BearLu.jpg",
+      image: "./images/Profile/Stickers-without-words/Bearu_3.png",
       theme: {
         primary: '#FFE75F',
         primaryTransparent: '#FFE75F33',
@@ -88,7 +88,7 @@ const Characters = () => {
         "命運可以改變。",
         "聆聽內心的聲音。"
       ],
-      image: "./images/Shop/Coasters/Yaji.jpg",
+      image: "./images/Profile/Stickers-without-words/Yaki_1.png",
       theme: {
         primary: '#3B42A7',
         primaryTransparent: '#3B42A733',
@@ -106,7 +106,7 @@ const Characters = () => {
         "為了守護而戰。",
         "勇氣就是我的力量。"
       ],
-      image: "./images/Shop/Coasters/GouGou.jpg",
+      image: "./images/Profile/Stickers-without-words/GOGO_4.png",
       theme: {
         primary: '#E64254',
         primaryTransparent: '#E6425433',

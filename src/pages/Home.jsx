@@ -10,17 +10,17 @@ const Home = () => {
     {
       id: 1,
       title: "Event 1",
-      image: `./images/mix/Home-banner.jpg`,
+      image: `./images/Shop/Activity/New _productpost.png`,
     },
     {
       id: 2,
       title: "Event 2",
-      image: `./images/mix/Hesa.JPG`,
+      image: `./images/Shop/Activity/Movie_New.png`,
     },
     {
       id: 3,
       title: "Event 3",
-      image: `./images/mix/Chi.JPG`,
+      image: `./images/Shop/Activity/New_Product_Acne_Care.png`,
     },
   ];
 
@@ -28,13 +28,12 @@ const Home = () => {
   const tweetIds = [
     "1832614806949654601",
     "1758506013739937826",
-    "1657691529098727424",
   ];
 
   const newsItems = [
     {
       date: "2025/01/06",
-      title: "新作發布！《黑砂的日常》第三集現已上線",
+      title: "新作發布！《黑砂的日常》第一集現已上線",
       content: "最新一集探討了黑砂如何與朋友們在日常生活中創造歡樂。",
       image: "./images/Home/Loading.jpg",
     },

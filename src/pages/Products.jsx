@@ -9,9 +9,9 @@ const Product = () => {
 
   // 輪播圖數據
   const carouselItems = [
-    { id: 1, image: "./images/mix/Home-banner.jpg", title: "新品上市" },
-    { id: 2, image: "./images/mix/Hesa01.JPG", title: "限時特價" },
-    { id: 3, image: "./images/mix/yayaguoguo.JPG", title: "節日優惠" },
+    { id: 1, image: "./images/Shop/Activity/New _productpost.png", title: "新品上市" },
+    { id: 2, image: "./images/Shop/Activity/Movie_New.png", title: "最新消息" },
+    { id: 3, image: "./images/Shop/Activity/New_Product_Acne_Care.png", title: "新品上市" },
   ];
 
   // 商品種類

@@ -77,22 +77,22 @@ function Layout() {
           {/* 音頻元素 */}
           <audio
             ref={audioRef}
-            src="/audio/MUSIC.mp3" // 替換為你的音樂檔案路徑
+            src="./audio/MUSIC.mp3" // 替換為你的音樂檔案路徑
             loop // 設置循環播放
           />
-          <button
+          <div
             className="music-toggle"
             onClick={toggleAudio} // 直接調用 toggleAudio 函數
           >
             <img
               src={
                 isPlaying
-                  ? "./images/Home/Volume-On.svg"
-                  : "./images/Home/Volume-On.svg"
+                  ? "./images/Home/musicon.svg"
+                  : "./images/Home/Volume-off.svg"
               }
               alt={isPlaying ? "Volume On" : "Volume Off"}
             />
-          </button>
+          </div>
         </div>
       </header>
       {/* 共用的內容 */}
@@ -195,20 +195,20 @@ function Layout() {
             <div className="footer-section">
               <h3>Social Media</h3>
               <div className="social-icons">
-                <a href="#">
+                <a href="https://www.facebook.com/HesaKizenn">
                   <img
                     src={`${import.meta.env.BASE_URL
                       }./images/Home/icon-sns-facebook.svg`}
                     alt="Facebook"
                   />
                 </a>
-                <a href="#">
+                <a href="https://www.instagram.com/hesa_chisato">
                   <img
                     src="./images/Home/icon-sns-IG.svg"
                     alt="Instagram"
                   />
                 </a>
-                <a href="#">
+                <a href="https://www.youtube.com/@Hesakizenn">
                   <img
                     src="./images/Home/icon-sns-youtube.svg"
                     alt="YouTube"
