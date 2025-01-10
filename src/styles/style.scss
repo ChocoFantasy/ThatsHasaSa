@@ -423,39 +423,71 @@ a {
   }
 
   // 輪播圖區域 + 內容區域
-  .carousel-section {
-    background-color: #f5f5f5;
-    padding: 48px 32px;
+.carousel-section {
+  padding: 20px 0; /* 增加顶部和底部内边距 */
+  margin-bottom: 40px; /* 为其他部分腾出空间 */
+  background-color: #f9f9f9; /* 背景颜色区分 */
+  text-align: center; /* 居中对齐内容 */
 
-    .carousel {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: center;
-      gap: 32px;
+  .carousel-container {
+    position: relative;
+    overflow: hidden;
+    max-width: 90%; /* 最大宽度限制 */
+    margin: 0 auto; /* 水平居中 */
+    height: 300px; /* 增加高度以显示完整内容 */
+  }
 
-      .slide {
-        width: 400px;
-        height: 300px;
-        border-radius: 16px;
-        overflow: hidden;
-        transition: all 0.5s ease;
-        opacity: 0.6;
-        transform: scale(0.9);
+  .carousel-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
 
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
+    img {
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: contain; /* 保持比例并显示完整内容 */
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+    }
 
-        &.active {
-          opacity: 1;
-          transform: scale(1.1);
-        }
-      }
+    h3 {
+      margin-top: 10px;
+      font-size: 1.2rem;
+      color: #333;
     }
   }
+
+  .carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+  }
+
+  .prev {
+    left: 10px;
+  }
+
+  .next {
+    right: 10px;
+  }
+}
 
   //內容區域 + 推特推廣 + 最新消息
   .content-grid {
