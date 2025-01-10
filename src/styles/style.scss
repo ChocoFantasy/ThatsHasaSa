@@ -257,6 +257,7 @@ a {
     /* 添加過渡動畫 */
   }
 
+
   /* 左右箭頭容器 */
   .navbar-header {
     display: flex;
@@ -276,12 +277,32 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 8px;
 
     .nav-icon {
       width: 20px;
       height: 20px;
       display: inline-block;
       position: relative;
+      /* 左右箭頭樣式 */
+      &.arrow-left,
+      &.arrow-right {
+          width: 12px;
+          height: 12px;
+          border: solid #13775A;
+          border-width: 0 4px 4px 0;
+          border-radius: 2px;
+          display: inline-block;
+          transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        &.arrow-left {
+          transform: rotate(135deg);
+        }
+
+        &.arrow-right {
+          transform: rotate(-45deg);
+        }
 
       /* 初始菱形樣式 */
       &.diamond {
@@ -290,33 +311,6 @@ a {
         transition: transform 0.3s ease, opacity 0.3s ease;
       }
 
-      /* 左箭頭樣式 */
-      &.arrow-left {
-        width: 12px;
-        /* 控制箭頭大小 */
-        height: 12px;
-        border: solid #008000;
-        /* 箭頭顏色 */
-        border-width: 0 2px 2px 0;
-        /* 只顯示右下部分 */
-        transform: rotate(135deg);
-        /* 左箭頭方向 */
-        transition: transform 0.3s ease, opacity 0.3s ease;
-      }
-
-      /* 右箭頭樣式 */
-      &.arrow-right {
-        width: 12px;
-        /* 控制箭頭大小 */
-        height: 12px;
-        border: solid #008000;
-        /* 箭頭顏色 */
-        border-width: 0 2px 2px 0;
-        /* 只顯示右下部分 */
-        transform: rotate(-45deg);
-        /* 右箭頭方向 */
-        transition: transform 0.3s ease, opacity 0.3s ease;
-      }
     }
   }
 
