@@ -238,14 +238,15 @@ a {
   /* 確保頁面填滿剩餘空間 */
   box-sizing: border-box;
   /* 包括邊框和內邊距 */
-
+  position: relative; // 添加相對定位
   //導覽列
 
   .navbar-container {
     position: fixed;
-    top: 10px;
+    top: 50%;
     left: 10px;
     width: 140px;
+    transform: translateY(-50%); // 確保完全置中
     /* 限制寬度 */
     background-color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
