@@ -1140,7 +1140,7 @@ a {
       color: #fff;
       border-radius: 8px;
       transition: transform 0.2s ease;
-
+      border: 2px solid transparent;
       &.active {
         background-color: #007bff;
         transform: scale(1.1);

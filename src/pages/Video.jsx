@@ -5,9 +5,8 @@ import { Link } from 'react-router-dom';
 //默認導出（Default Exports），不使用 {} 導入，使用
 // import Video from './pages/Video';
 const videoList = [
-  { id: 1, title: '第一集', url: 'https://www.youtube.com/embed/9p89q-JojNc?autoplay=1' },
-  { id: 2, title: '第二集', url: 'https://www.youtube.com/embed/cn8moMyk6W0?si=NAFSGwRboV-vLxhL' },
-  { id: 3, title: '第三集', url: 'https://www.youtube.com/embed/6PWkolpFrgg?si=EvRafPKhbaHXh3e1' },
+  { id: 1, title: '第一集', url: './audio/Lili&Hesa.mp4' },
+  { id: 2, title: '第二集', url: './audio/sunny.mp4' },
 ];
 
 function Video() {
