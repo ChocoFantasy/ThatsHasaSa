@@ -60,6 +60,7 @@ function Layout() {
     { title: "作品", to: "/Video" },
   ];
 
+
   return (
     <div className="website-share">
       {/* 共用的頁首 */}
@@ -139,7 +140,7 @@ function Layout() {
         {/* 初始菱形圖案按鈕 */}
         {!isNavbarOpen && (
           <button
-            className="nav-toggle-left"
+            className="nav-toggle-diamond"
             onClick={() => setIsNavbarOpen(true)}
             aria-label="Toggle navigation"
           >

@@ -239,8 +239,10 @@ a {
   box-sizing: border-box;
   /* 包括邊框和內邊距 */
   position: relative; // 添加相對定位
-  //導覽列
 
+
+
+  //導覽列
   .navbar-container {
     position: fixed;
     top: 50%;
@@ -282,8 +284,8 @@ a {
     .nav-icon {
       width: 20px;
       height: 20px;
-      display: inline-block;
-      position: relative;
+      transition: all 0.3s ease;
+
       /* 左右箭頭樣式 */
       &.arrow-left,
       &.arrow-right {
@@ -306,9 +308,31 @@ a {
 
       /* 初始菱形樣式 */
       &.diamond {
-        background-color: #008000;
-        clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-        transition: transform 0.3s ease, opacity 0.3s ease;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transform: rotate(45deg);
+        background-color: #13775A;
+        
+        &::before {
+          content: '';
+          position: absolute;
+          top: 2px;
+          left: 2px;
+          right: 2px;
+          bottom: 2px;
+          background-color: white;
+        }
+        
+        &::after {
+          content: '';
+          position: absolute;
+          top: 4px;
+          left: 4px;
+          right: 4px;
+          bottom: 4px;
+          background-color: #13775A;
+        }
       }
 
     }
@@ -329,11 +353,12 @@ a {
       transition: all 0.3s ease;
 
       &:hover {
-        color: #008000;
+        color: #13775A;
+        background-color: rgba(19, 119, 90, 0.1);
       }
 
       &.active {
-        background-color: #008000;
+        background-color: #13775A;
         color: white;
         border-radius: 4px;
       }
@@ -353,34 +378,6 @@ a {
       }
     }
   }
-
-  /* 菱形圖案動畫 */
-  .nav-toggle-left .diamond {
-    animation: rotateIn 0.3s ease-in-out;
-  }
-
-  @keyframes rotateIn {
-    0% {
-      transform: rotate(45deg) scale(0.8);
-    }
-
-    100% {
-      transform: rotate(0deg) scale(1);
-    }
-  }
-
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
 
 }
 
