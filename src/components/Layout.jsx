@@ -65,11 +65,10 @@ function Layout() {
       {/* 共用的頁首 */}
       <header className="header">
         {/* Logo 放置區 */}
-        <div className="logo">
+        <div className="logo"  onClick={() => navigate("/")}>
           {/* 如果使用 <HashRouter> 前端路由，路徑只要有Link to 記得前面加#，to="#/Home"。 */}
-          <Link to="#/Home">
+          
             <img src={`./images/Home/WhatsTheHesa_LOGO.svg`} alt="Logo" />
-          </Link>
         </div>
 
         {/* 音樂按鈕 */}

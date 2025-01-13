@@ -7,6 +7,11 @@
 
 /* 重置字體 */
 
+
+* {
+    cursor: default; // 恢复恢復指针樣式
+ }
+
 body {
   font-family: $Chinese;
   /* 系統預設的無襯線字 */
@@ -250,10 +255,26 @@ a {
     transform: translateY(-50%);
     z-index: 999;
 
+    // 添加展開與收合的動畫效果
+    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55), opacity 0.5s ease-in-out;
+    transform-origin: left center;
+
+    &.collapsed {
+      transform: translateX(-150%); // 收合時向左滑出
+      opacity: 0; // 收合時透明度降低
+      pointer-events: none; // 禁用收合時的點擊
+    }
+
+    &.expanded {
+      transform: translateX(0); // 展開時滑入
+      opacity: 1;
+      pointer-events: auto; // 恢復點擊功能
+    }
+
     // 未點擊時的菱形按鈕 - 改為輪廓樣式
     .nav-toggle-diamond {
       position: absolute; // 改為 absolute 以配合父元素定位
-      top: -110px; // 調整位置到左上方
+      top: -120px; // 調整位置到左上方
       left: 10px;
       width: 45px;
       height: 45px;
@@ -295,6 +316,7 @@ a {
       padding: 10px 0;
       z-index: 999;
 
+      
 
       .navbar-header {
         display: flex;
@@ -339,6 +361,7 @@ a {
           padding: 10px 15px;
           color: #333;
           text-decoration: none;
+          cursor: pointer; // 確保游標可見
 
           &.active {
             background-color: #13775A;
@@ -350,7 +373,7 @@ a {
             bottom: 10;
             left: 10;
             width: 0; // 初始寬度為 0
-            height: px;
+            height: 2px;
             background-color: #000;
             margin: 0;
             border: none;
@@ -1256,6 +1279,14 @@ a {
           object-fit: contain;
           /* 圖片按比例縮放，並保持完整可見 */
         }
+
+     
+          &:hover {
+            color: $primary-color;
+            scale: 1.1;
+            transition: all 0.3s ease-in-out;
+          }
+        
       }
     }
   }
