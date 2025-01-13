@@ -10,6 +10,22 @@
 
 * {
   cursor: default; // 恢复恢復指针樣式
+
+  html {
+    font-size: 16px; // 基礎字體大小
+  }
+
+  @media (max-width: 768px) {
+    html {
+      font-size: 14px; // 手機縮小字體
+    }
+  }
+
+  @media (min-width: 1200px) {
+    html {
+      font-size: 18px; // 桌面放大字體
+    }
+  }
 }
 
 body {
@@ -575,6 +591,42 @@ a {
     }
   }
 
+  // 手機版樣式
+  @media (max-width: 768px) {
+    .home-container {
+      padding: 10px;
+    }
+
+    .main-visual-section .main-visual-image {
+      width: 100%;
+      height: auto;
+    }
+
+    .carousel-section .slide {
+      flex: 0 0 100%; // 單一顯示
+    }
+
+    .content-grid {
+      flex-direction: column;
+    }
+
+    .twitter-feed,
+    .news-section {
+      width: 100%; // 全屏顯示
+    }
+  }
+
+  // 平板版樣式
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .carousel-section .slide {
+      flex: 0 0 50%; // 同屏顯示兩張
+    }
+
+    .content-grid {
+      flex-direction: row;
+    }
+  }
+
 }
 
 // IP介紹區域
@@ -724,11 +776,10 @@ a {
   }
 
   .character-visual img {
-    width: 400px;
-    height: 400px;
-    /* Reduced image size */
+    max-width: 60%; // 圖片不超出容器寬度
+    max-height: 60%; // 圖片不超出容器高度
     border-radius: 15px;
-    object-fit: cover;
+    object-fit: contain; // 讓圖片完整展示
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
@@ -867,6 +918,47 @@ a {
 
   }
 
+  .selector-name {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 5px 0;
+    clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: var(--character-primary);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateX(-100px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+  }
+
   .carousel-section {
     display: flex;
     justify-content: center;
@@ -930,48 +1022,115 @@ a {
     }
   }
 
+  // 手機版樣式
+  @media (max-width: 768px) {
+    .character-page {
+      padding: 10px;
+    }
+
+    .character-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .character-info {
+      margin-bottom: 20px;
+    }
+
+    .info-grid {
+      display: block; // 讓每個塊佔據整行
+    }
+
+    .character-visual img {
+      width: 80%; // 圖片縮小以適應手機
+      height: auto;
+    }
+
+    .character-selector {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .selector-button {
+      flex: 0 0 45%; // 每行顯示兩個按鈕
+      margin: 5px;
+    }
+
+    .carousel-section {
+      overflow-x: scroll; // 手機可橫向滾動
+      display: flex;
+    }
+
+    .carousel-item {
+      flex: 0 0 80%; // 每次顯示一個貼圖
+      margin-right: 10px;
+    }
+  }
+
+  // 平板版樣式
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .character-content {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 20px;
+    }
+
+    .character-info {
+      width: 50%;
+      padding-right: 10px;
+    }
+
+    .character-visual {
+      width: 50%;
+    }
+
+    .character-visual img {
+      width: 100%;
+      height: auto;
+    }
+
+    .character-selector {
+      display: flex;
+      justify-content: center;
+    }
+
+    .selector-button {
+      flex: 0 0 20%;
+      margin: 5px;
+    }
+
+    .carousel-item {
+      flex: 0 0 25%; // 平板顯示多個貼圖
+    }
+  }
+
+  // 桌面版樣式
+  @media (min-width: 1025px) {
+    .character-content {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .character-info {
+      width: 40%;
+    }
+
+    .character-visual {
+      width: 60%;
+    }
+
+    .carousel-item {
+      flex: 0 0 20%;
+    }
+  }
+
 }
 
-.selector-name {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  font-size: 1.2rem;
-  color: #fff;
-  font-weight: bold;
-  text-align: center;
-  background: rgba(0, 0, 0, 0.7);
-  padding: 5px 0;
-  clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
-  transition: background-color 0.2s ease;
 
-  &:hover {
-    background-color: var(--character-primary);
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-
-    to {
-      opacity: 1;
-    }
-  }
-
-  @keyframes slideIn {
-    from {
-      transform: translateX(-100px);
-      opacity: 0;
-    }
-
-    to {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-}
 
 // 商品頁面
 .product-container {
