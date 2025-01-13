@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 const Characters = () => {
   const [selectedCharacter, setSelectedCharacter] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isHovering, setIsHovering] = useState(false);
+  const [carouselOffset, setCarouselOffset] = useState(0);
 
   const characters = [
     {
@@ -19,6 +21,12 @@ const Characters = () => {
       ],
       image: "./images/LOGO/hesa_logo_BU.png",
       sealImage:"./images/Profile/Seal/seal-Hesa.png",
+      stickers: [
+        "./images/Profile/Stickers-without-words/Hesa_1.png",
+        "./images/Profile/Stickers-without-words/Hesa_2.png",
+        "./images/Profile/Stickers-without-words/Hesa_3.png",
+        "./images/Profile/Stickers-without-words/Hesa_4.png",
+      ],
       theme: {
         primary: "#13775A",
         primaryTransparent: "#13775A33",
@@ -39,6 +47,12 @@ const Characters = () => {
       ],
       image: "./images/Profile/Stickers-without-words/ZZ_4.png",
       sealImage:"./images/Profile/Seal/seal-ZZ.png",
+      stickers: [
+        "./images/Profile/Stickers-without-words/ZZ_1.png",
+        "./images/Profile/Stickers-without-words/ZZ_2.png",
+        "./images/Profile/Stickers-without-words/ZZ_3.png",
+        "./images/Profile/Stickers-without-words/ZZ_4.png",
+      ],
       theme: {
         primary: "#CCB7FF",
         primaryTransparent: "#CCB7FF33",
@@ -59,6 +73,12 @@ const Characters = () => {
       ],
       image: "./images/Profile/Stickers-without-words/Vanpe_1.png",
       sealImage:"./images/Profile/Seal/seal-Vanpe.png",
+      stickers: [
+        "./images/Profile/Stickers-without-words/Vanpe_1.png",
+        "./images/Profile/Stickers-without-words/Vanpe_2.png",
+        "./images/Profile/Stickers-without-words/Vanpe_3.png",
+        "./images/Profile/Stickers-without-words/Vanpe_4.png",
+      ],
       theme: {
         primary: "#A6E5FF",
         primaryTransparent: "#A6E5FF33",
@@ -79,6 +99,12 @@ const Characters = () => {
       ],
       image: "./images/Profile/Stickers-without-words/Bearu_3.png",
       sealImage:"./images/Profile/Seal/seal-Bearu.png",
+      stickers: [
+        "./images/Profile/Stickers-without-words/Bearu_1.png",
+        "./images/Profile/Stickers-without-words/Bearu_2.png",
+        "./images/Profile/Stickers-without-words/Bearu_3.png",
+        "./images/Profile/Stickers-without-words/Bearu_4.png",
+      ],
       theme: {
         primary: "#FFE75F",
         primaryTransparent: "#FFE75F33",
@@ -99,6 +125,12 @@ const Characters = () => {
       ],
       image: "./images/Profile/Stickers-without-words/Yaki_1.png",
       sealImage:"./images/Profile/Seal/seal-Yaki.png",
+      stickers: [
+        "./images/Profile/Stickers-without-words/Yaki_1.png",
+        "./images/Profile/Stickers-without-words/Yaki_2.png",
+        "./images/Profile/Stickers-without-words/Yaki_3.png",
+        "./images/Profile/Stickers-without-words/Yaki_4.png",
+      ],
       theme: {
         primary: "#3B42A7",
         primaryTransparent: "#3B42A733",
@@ -119,6 +151,12 @@ const Characters = () => {
       ],
       image: "./images/Profile/Stickers-without-words/GOGO_4.png",
       sealImage:"./images/Profile/Seal/seal-GOGO.png",
+      stickers: [
+        "./images/Profile/Stickers-without-words/GOGO_1.png",
+        "./images/Profile/Stickers-without-words/GOGO_2.png",
+        "./images/Profile/Stickers-without-words/GOGO_3.png",
+        "./images/Profile/Stickers-without-words/GOGO_4.png",
+      ],
       theme: {
         primary: "#E64254",
         primaryTransparent: "#E6425433",
@@ -138,6 +176,17 @@ const Characters = () => {
 
   const currentCharacter = characters[selectedCharacter];
 
+  // 控制輪播邏輯
+  useEffect(() => {
+    let interval;
+    if (!isHovering) {
+      interval = setInterval(() => {
+        setCarouselOffset((prev) => prev - 1); // 向左移動
+      }, 30);
+    }
+    return () => clearInterval(interval);
+  }, [isHovering]);
+
   return (
     <div
       className="character-page"
@@ -149,6 +198,7 @@ const Characters = () => {
           currentCharacter.theme.primaryTransparent,
       }}
     >
+         {/* 角色介紹部分 */}
       <div
         className="character-content"
         style={{
@@ -159,6 +209,7 @@ const Characters = () => {
           } 100%)`,
         }}
       >
+         {/* 角色信息 */}
         <div
           className="character-info"
           style={{
@@ -216,6 +267,29 @@ const Characters = () => {
             <span className="selector-name">{char.name}</span>
           </button>
         ))}
+      </div>
+
+       {/* 貼圖輪播區 */}
+       <div
+        className="carousel-section"
+        onMouseEnter={() => setIsHovering(true)}
+        onMouseLeave={() => setIsHovering(false)}
+      >
+        <div
+          className="carousel-track"
+          style={{
+            transform: `translateX(${carouselOffset}px)`,
+          }}
+        >
+          {currentCharacter.stickers.map((sticker, index) => (
+            <img
+              key={index}
+              src={sticker}
+              alt={`Sticker ${index}`}
+              className="carousel-item"
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -443,7 +443,9 @@ a {
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  
+    height: 400px; // 調整高度
+    margin-top: 20px;
+
     .carousel {
       display: flex;
       justify-content: center;
@@ -510,6 +512,23 @@ a {
           background-color: rgba(0, 0, 0, 0.8);
         }
       }
+    }
+    // 貼圖
+    .carousel-track {
+      display: flex;
+      gap: 10px;
+      transition: transform 0.3s linear;
+      will-change: transform; // 提升性能
+    }
+  
+    .carousel-item {
+      flex-shrink: 0;
+      width: 100px; // 每個貼圖的寬度
+      height: 100px;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      background: white;
     }
   }
 
