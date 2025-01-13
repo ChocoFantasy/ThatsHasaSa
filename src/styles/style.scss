@@ -194,6 +194,7 @@ a {
     align-items: center;
     z-index: 50;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+
     /* 阴影效果 */
     .logo {
       width: 300px;
@@ -209,6 +210,7 @@ a {
         /* 保持图片比例 */
       }
     }
+
     .music-toggle {
       width: 50px;
       height: 50px;
@@ -240,145 +242,132 @@ a {
   /* 包括邊框和內邊距 */
   position: relative; // 添加相對定位
 
-
-
-  //導覽列
-  .navbar-container {
+  // 導航欄區域的基礎樣式
+  .navbar-area {
     position: fixed;
     top: 50%;
     left: 10px;
-    width: 140px;
-    transform: translateY(-50%); // 確保完全置中
-    /* 限制寬度 */
-    background-color: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    padding: 10px 0;
+    transform: translateY(-50%);
     z-index: 999;
-    animation: fadeIn 0.3s ease-in-out;
-    /* 添加過渡動畫 */
-  }
 
+    // 未點擊時的菱形按鈕 - 改為輪廓樣式
+    .nav-toggle-diamond {
+      position: absolute; // 改為 absolute 以配合父元素定位
+      top: -110px; // 調整位置到左上方
+      left: 10px;
+      width: 45px;
+      height: 45px;
+      background: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      padding: 0;
+      z-index: 999;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 
-  /* 左右箭頭容器 */
-  .navbar-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 10px;
-  }
-
-  /* 左右箭頭按鈕 */
-  .nav-toggle-left,
-  .nav-toggle-right {
-    background: none;
-    border: none;
-    cursor: pointer;
-    width: 40px;
-    height: 0px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 8px;
-
-    .nav-icon {
-      width: 20px;
-      height: 20px;
-      transition: all 0.3s ease;
-
-      /* 左右箭頭樣式 */
-      &.arrow-left,
-      &.arrow-right {
-          width: 12px;
-          height: 12px;
-          border: solid #13775A;
-          border-width: 0 4px 4px 0;
-          border-radius: 2px;
-          display: inline-block;
-          transition: transform 0.3s ease, opacity 0.3s ease;
-        }
-
-        &.arrow-left {
-          transform: rotate(135deg);
-        }
-
-        &.arrow-right {
-          transform: rotate(-45deg);
-        }
-
-      /* 初始菱形樣式 */
-      &.diamond {
-        width: 100%;
-        height: 100%;
-        position: relative;
+      .nav-icon.diamond {
+        position: absolute;
+        top: 30%;
+        left: 28%;
+        transform: translate(-50%, -50%);
+        width: 12px;
+        height: 12px;
+        background-color: transparent; // 移除背景色
         transform: rotate(45deg);
-        background-color: #13775A;
-        
-        &::before {
-          content: '';
-          position: absolute;
-          top: 2px;
-          left: 2px;
-          right: 2px;
-          bottom: 2px;
-          background-color: white;
-        }
-        
-        &::after {
-          content: '';
-          position: absolute;
-          top: 4px;
-          left: 4px;
-          right: 4px;
-          bottom: 4px;
-          background-color: #13775A;
-        }
+        border-radius: 3px;
+        border: 5px solid #13775A; // 調整邊框粗細
       }
-
-    }
-  }
-
-
-  /* 導航選單 */
-  .nav-menu {
-    margin-top: 10px;
-    text-align: center;
-
-    .nav-item {
-      display: block;
-      color: #333;
-      text-decoration: none;
-      font-size: 16px;
-      margin: 10px 0;
-      transition: all 0.3s ease;
 
       &:hover {
-        color: #13775A;
-        background-color: rgba(19, 119, 90, 0.1);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      }
+    }
+
+    .navbar-container {
+      position: fixed;
+      top: 50%;
+      left: 10px;
+      width: 140px;
+      transform: translateY(-50%);
+      background-color: white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      padding: 10px 0;
+      z-index: 999;
+
+
+      .navbar-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 10px;
+        margin-bottom: 10px;
+
+        button {
+          background: none;
+          border: none;
+          cursor: pointer;
+          padding: 8px;
+
+          .nav-icon {
+
+            &.arrow-left,
+            &.arrow-right {
+              width: 12px;
+              height: 12px;
+              border: solid #13775A;
+              border-width: 0 5px 5px 0;
+              border-radius: 3px;
+              display: inline-block;
+            }
+
+            &.arrow-left {
+              transform: rotate(135deg);
+            }
+
+            &.arrow-right {
+              transform: rotate(-45deg);
+            }
+          }
+        }
       }
 
-      &.active {
-        background-color: #13775A;
-        color: white;
-        border-radius: 4px;
-      }
+      .nav-menu {
+        .nav-item {
+          position: relative; // 為底線動畫添加相對定位
+          display: block;
+          padding: 10px 15px;
+          color: #333;
+          text-decoration: none;
 
-      hr {
-        margin: 5px auto;
-        width: 50%;
-        height: 2px;
-        background: #333;
-        border: none;
-        transform: scaleX(0);
-        transition: transform 0.3s ease;
-      }
+          &.active {
+            background-color: #13775A;
+            color: white;
+          }
 
-      &:hover hr {
-        transform: scaleX(1);
+          hr {
+            position: absolute;
+            bottom: 10;
+            left: 10;
+            width: 0; // 初始寬度為 0
+            height: px;
+            background-color: #000;
+            margin: 0;
+            border: none;
+            transition: width 0.3s ease; // 添加過渡效果
+            display: block; // 顯示分隔線
+            overflow: hidden;
+          }
+
+          &:hover {
+            hr {
+              width: 80%; // hover 時展開到完整寬度
+            }
+          }
+        }
       }
     }
   }
-
 }
 
 // 首頁
@@ -423,71 +412,80 @@ a {
   }
 
   // 輪播圖區域 + 內容區域
-.carousel-section {
-  padding: 20px 0; /* 增加顶部和底部内边距 */
-  margin-bottom: 40px; /* 为其他部分腾出空间 */
-  background-color: #f9f9f9; /* 背景颜色区分 */
-  text-align: center; /* 居中对齐内容 */
+  .carousel-section {
+    padding: 20px 0;
+    /* 增加顶部和底部内边距 */
+    margin-bottom: 40px;
+    /* 为其他部分腾出空间 */
+    background-color: #f9f9f9;
+    /* 背景颜色区分 */
+    text-align: center;
+    /* 居中对齐内容 */
 
-  .carousel-container {
-    position: relative;
-    overflow: hidden;
-    max-width: 90%; /* 最大宽度限制 */
-    margin: 0 auto; /* 水平居中 */
-    height: 300px; /* 增加高度以显示完整内容 */
-  }
-
-  .carousel-item {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: transform 0.5s ease, opacity 0.5s ease;
-
-    img {
-      max-height: 100%;
-      max-width: 100%;
-      object-fit: contain; /* 保持比例并显示完整内容 */
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+    .carousel-container {
+      position: relative;
+      overflow: hidden;
+      max-width: 90%;
+      /* 最大宽度限制 */
+      margin: 0 auto;
+      /* 水平居中 */
+      height: 300px;
+      /* 增加高度以显示完整内容 */
     }
 
-    h3 {
-      margin-top: 10px;
-      font-size: 1.2rem;
-      color: #333;
+    .carousel-item {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: transform 0.5s ease, opacity 0.5s ease;
+
+      img {
+        max-height: 100%;
+        max-width: 100%;
+        object-fit: contain;
+        /* 保持比例并显示完整内容 */
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        /* 添加阴影 */
+      }
+
+      h3 {
+        margin-top: 10px;
+        font-size: 1.2rem;
+        color: #333;
+      }
+    }
+
+    .carousel-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.7);
+      }
+    }
+
+    .prev {
+      left: 10px;
+    }
+
+    .next {
+      right: 10px;
     }
   }
-
-  .carousel-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 10;
-    transition: background-color 0.3s;
-
-    &:hover {
-      background-color: rgba(0, 0, 0, 0.7);
-    }
-  }
-
-  .prev {
-    left: 10px;
-  }
-
-  .next {
-    right: 10px;
-  }
-}
 
   //內容區域 + 推特推廣 + 最新消息
   .content-grid {
@@ -598,38 +596,51 @@ a {
 .social-links-container {
   position: fixed;
   right: 0;
-  top: 50%; /* 垂直居中 */
+  top: 50%;
+  /* 垂直居中 */
   transform: translateY(-50%);
   z-index: 100;
-  background-color: white; /* 白色 */
-  border-radius: 20px; /* 圓角 */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-  width: 80px; /* 寬度 */
+  background-color: white;
+  /* 白色 */
+  border-radius: 20px;
+  /* 圓角 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 80px;
+  /* 寬度 */
 
-  .social-links  {
+  .social-links {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 110px; 
-    height: 350px; 
-    background-color: white; /* 背景颜色 */
-    border-radius: 12px; /* 圆角邊框 */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-    transition: transform 0.3s ease, box-shadow 0.3s ease; 
-    gap: 19px; /* 圖片間距 */
+    width: 110px;
+    height: 350px;
+    background-color: white;
+    /* 背景颜色 */
+    border-radius: 12px;
+    /* 圆角邊框 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    gap: 19px;
+    /* 圖片間距 */
   }
-  
+
   .social-links a:hover {
-    transform: scale(1.1); /* 放大 */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* 陰影 */
+    transform: scale(1.1);
+    /* 放大 */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    /* 陰影 */
   }
-  
+
   .social-links img {
-    width: 55px; /* 圖標寬度 */
-    height: 55px; /* 圖標高度 */
-    object-fit: contain; /* 保持比例 */
+    width: 55px;
+    /* 圖標寬度 */
+    height: 55px;
+    /* 圖標高度 */
+    object-fit: contain;
+    /* 保持比例 */
   }
+
   .social-links-container::before {
     content: "";
     position: absolute;
@@ -637,10 +648,13 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    border-radius: 20px; /* 與容器的圓角一樣 */
+    border-radius: 20px;
+    /* 與容器的圓角一樣 */
     background-color: white;
-    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1); /* 增强立體感 */
-    z-index: -1; /* 确保在背景層 */
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1);
+    /* 增强立體感 */
+    z-index: -1;
+    /* 确保在背景層 */
   }
 }
 
@@ -1165,6 +1179,7 @@ a {
       border-radius: 8px;
       transition: transform 0.2s ease;
       border: 2px solid transparent;
+
       &.active {
         background-color: #007bff;
         transform: scale(1.1);

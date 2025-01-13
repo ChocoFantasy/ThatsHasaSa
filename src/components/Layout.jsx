@@ -60,7 +60,6 @@ function Layout() {
     { title: "作品", to: "/Video" },
   ];
 
-
   return (
     <div className="website-share">
       {/* 共用的頁首 */}
@@ -98,55 +97,55 @@ function Layout() {
       </header>
       {/* 共用的內容 */}
       <div className="main-content">
-        {/* 導航欄 */}
-        {isNavbarOpen && (
-          <div className="navbar-container">
-            {/* 左右箭頭 */}
-            <div className="navbar-header">
-              <button
-                className="nav-toggle-left"
-                onClick={() => setIsNavbarOpen(false)}
-                aria-label="Close navigation"
-              >
-                <div className="nav-icon arrow-left"></div>
-              </button>
-              <button
-                className="nav-toggle-right"
-                onClick={() => setIsNavbarOpen(false)}
-                aria-label="Close navigation"
-              >
-                <div className="nav-icon arrow-right"></div>
-              </button>
-            </div>
-
-            {/* 導航選單 */}
-            <nav className="nav-menu">
-              {navItems.map((item) => (
-                <Link
-                  key={item.title}
-                  to={item.to}
-                  className={`nav-item ${
-                    location.pathname === item.to ? "active" : ""
-                  }`}
+        {/* 導航欄區域 */}
+        <div className={`navbar-area ${isNavbarOpen ? "open" : ""}`}>
+          {/* 展開狀態的導航欄 */}
+          {isNavbarOpen && (
+            <div className="navbar-container">
+              <div className="navbar-header">
+                <button
+                  className="nav-toggle-left"
+                  onClick={() => setIsNavbarOpen(false)}
+                  aria-label="Close navigation"
                 >
-                  {item.title}
-                  <hr />
-                </Link>
-              ))}
-            </nav>
-          </div>
-        )}
+                  <div className="nav-icon arrow-left"></div>
+                </button>
+                <button
+                  className="nav-toggle-right"
+                  onClick={() => setIsNavbarOpen(false)}
+                  aria-label="Close navigation"
+                >
+                  <div className="nav-icon arrow-right"></div>
+                </button>
+              </div>
+              <nav className="nav-menu">
+                {navItems.map((item) => (
+                  <Link
+                    key={item.title}
+                    to={item.to}
+                    className={`nav-item ${
+                      location.pathname === item.to ? "active" : ""
+                    }`}
+                  >
+                    {item.title}
+                    <hr />
+                  </Link>
+                ))}
+              </nav>
+            </div>
+          )}
 
-        {/* 初始菱形圖案按鈕 */}
-        {!isNavbarOpen && (
-          <button
-            className="nav-toggle-diamond"
-            onClick={() => setIsNavbarOpen(true)}
-            aria-label="Toggle navigation"
-          >
-            <div className="nav-icon diamond"></div>
-          </button>
-        )}
+          {/* 收合狀態的菱形按鈕 */}
+          {!isNavbarOpen && (
+            <button
+              className="nav-toggle-diamond"
+              onClick={() => setIsNavbarOpen(true)}
+              aria-label="Toggle navigation"
+            >
+              <div className="nav-icon diamond"></div>
+            </button>
+          )}
+        </div>
 
         {/*  <Outlet /> {/* 這裡會渲染子路由的內容 */}
         <main className={`content ${isNavbarOpen ? "navbar-open" : ""}`}>
