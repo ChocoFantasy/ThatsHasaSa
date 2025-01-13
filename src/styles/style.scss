@@ -9,8 +9,8 @@
 
 
 * {
-    cursor: default; // 恢复恢復指针樣式
- }
+  cursor: default; // 恢复恢復指针樣式
+}
 
 body {
   font-family: $Chinese;
@@ -316,7 +316,7 @@ a {
       padding: 10px 0;
       z-index: 999;
 
-      
+
 
       .navbar-header {
         display: flex;
@@ -444,7 +444,7 @@ a {
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     height: 400px; // 調整高度
-    margin-top: 20px;
+
 
     .carousel {
       display: flex;
@@ -453,32 +453,32 @@ a {
       position: relative;
       height: 400px;
     }
-  
+
     .slide {
       position: absolute;
       width: 30%;
       transition: transform 0.5s ease, opacity 0.5s ease;
       opacity: 0; // 初始透明
       transform: scale(0.8); // 略縮小
-  
+
       &.active-slide {
         transform: scale(1) translateX(0); // 中間圖片
         opacity: 1;
         z-index: 2;
       }
-  
+
       &.prev-slide {
         transform: scale(0.9) translateX(-120%); // 左側圖片
         opacity: 0.6;
         z-index: 1;
       }
-  
+
       &.next-slide {
         transform: scale(0.9) translateX(120%); // 右側圖片
         opacity: 0.6;
         z-index: 1;
       }
-  
+
       img {
         width: 100%;
         height: 100%;
@@ -486,7 +486,7 @@ a {
         border-radius: 10px;
       }
     }
-  
+
     .carousel-nav {
       position: absolute;
       top: 50%;
@@ -495,7 +495,7 @@ a {
       justify-content: space-between;
       transform: translateY(-50%);
       z-index: 10;
-  
+
       button {
         background-color: rgba(0, 0, 0, 0.5);
         color: white;
@@ -507,29 +507,13 @@ a {
         justify-content: center;
         align-items: center;
         cursor: pointer;
-  
+
         &:hover {
           background-color: rgba(0, 0, 0, 0.8);
         }
       }
     }
-    // 貼圖
-    .carousel-track {
-      display: flex;
-      gap: 10px;
-      transition: transform 0.3s linear;
-      will-change: transform; // 提升性能
-    }
-  
-    .carousel-item {
-      flex-shrink: 0;
-      width: 100px; // 每個貼圖的寬度
-      height: 100px;
-      object-fit: contain;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      background: white;
-    }
+
   }
 
   //內容區域 + 推特推廣 + 最新消息
@@ -882,6 +866,70 @@ a {
 
 
   }
+
+  .carousel-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    gap: 10px; // 圖片間距
+    flex-wrap: wrap;
+
+    .carousel {
+      display: flex;
+      gap: 15px; // 貼圖之間的間距
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .carousel-item {
+      width: 200px; // 貼圖寬度
+      height: 200px; // 貼圖高度
+      overflow: hidden;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        transition: transform 0.3s ease;
+      }
+
+      &:hover {
+        transform: scale(1.2); // 懸停時放大
+        z-index: 2;
+      }
+    }
+  }
+
+  .line-sticker-section {
+    text-align: center;
+    margin-top: 40px;
+
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .line-sticker-link {
+      font-size: 1.2rem;
+      color: #007aff;
+      text-decoration: none;
+      background: #f9f9f9;
+      padding: 10px 20px;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover {
+        background-color: #e8f0fe;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      }
+    }
+  }
+
 }
 
 .selector-name {
@@ -1328,13 +1376,13 @@ a {
           /* 圖片按比例縮放，並保持完整可見 */
         }
 
-     
-          &:hover {
-            color: $primary-color;
-            scale: 1.1;
-            transition: all 0.3s ease-in-out;
-          }
-        
+
+        &:hover {
+          color: $primary-color;
+          scale: 1.1;
+          transition: all 0.3s ease-in-out;
+        }
+
       }
     }
   }

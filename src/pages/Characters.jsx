@@ -3,8 +3,6 @@ import React, { useState, useEffect } from "react";
 const Characters = () => {
   const [selectedCharacter, setSelectedCharacter] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const [isHovering, setIsHovering] = useState(false);
-  const [carouselOffset, setCarouselOffset] = useState(0);
 
   const characters = [
     {
@@ -20,7 +18,7 @@ const Characters = () => {
         "小小的砂粒，也能成為巨大的創造。",
       ],
       image: "./images/LOGO/hesa_logo_BU.png",
-      sealImage:"./images/Profile/Seal/seal-Hesa.png",
+      sealImage: "./images/Profile/Seal/seal-Hesa.png",
       stickers: [
         "./images/Profile/Stickers-without-words/Hesa_1.png",
         "./images/Profile/Stickers-without-words/Hesa_2.png",
@@ -46,7 +44,7 @@ const Characters = () => {
         "讓我們慢下來，感受這一刻。",
       ],
       image: "./images/Profile/Stickers-without-words/ZZ_4.png",
-      sealImage:"./images/Profile/Seal/seal-ZZ.png",
+      sealImage: "./images/Profile/Seal/seal-ZZ.png",
       stickers: [
         "./images/Profile/Stickers-without-words/ZZ_1.png",
         "./images/Profile/Stickers-without-words/ZZ_2.png",
@@ -72,7 +70,7 @@ const Characters = () => {
         "不管多累，光芒不能熄滅！",
       ],
       image: "./images/Profile/Stickers-without-words/Vanpe_1.png",
-      sealImage:"./images/Profile/Seal/seal-Vanpe.png",
+      sealImage: "./images/Profile/Seal/seal-Vanpe.png",
       stickers: [
         "./images/Profile/Stickers-without-words/Vanpe_1.png",
         "./images/Profile/Stickers-without-words/Vanpe_2.png",
@@ -98,7 +96,7 @@ const Characters = () => {
         "策略決定成敗。",
       ],
       image: "./images/Profile/Stickers-without-words/Bearu_3.png",
-      sealImage:"./images/Profile/Seal/seal-Bearu.png",
+      sealImage: "./images/Profile/Seal/seal-Bearu.png",
       stickers: [
         "./images/Profile/Stickers-without-words/Bearu_1.png",
         "./images/Profile/Stickers-without-words/Bearu_2.png",
@@ -124,7 +122,7 @@ const Characters = () => {
         "幽默，是最棒的調味料。",
       ],
       image: "./images/Profile/Stickers-without-words/Yaki_1.png",
-      sealImage:"./images/Profile/Seal/seal-Yaki.png",
+      sealImage: "./images/Profile/Seal/seal-Yaki.png",
       stickers: [
         "./images/Profile/Stickers-without-words/Yaki_1.png",
         "./images/Profile/Stickers-without-words/Yaki_2.png",
@@ -150,7 +148,7 @@ const Characters = () => {
         "專注才能成就未來。",
       ],
       image: "./images/Profile/Stickers-without-words/GOGO_4.png",
-      sealImage:"./images/Profile/Seal/seal-GOGO.png",
+      sealImage: "./images/Profile/Seal/seal-GOGO.png",
       stickers: [
         "./images/Profile/Stickers-without-words/GOGO_1.png",
         "./images/Profile/Stickers-without-words/GOGO_2.png",
@@ -176,16 +174,6 @@ const Characters = () => {
 
   const currentCharacter = characters[selectedCharacter];
 
-  // 控制輪播邏輯
-  useEffect(() => {
-    let interval;
-    if (!isHovering) {
-      interval = setInterval(() => {
-        setCarouselOffset((prev) => prev - 1); // 向左移動
-      }, 30);
-    }
-    return () => clearInterval(interval);
-  }, [isHovering]);
 
   return (
     <div
@@ -198,7 +186,7 @@ const Characters = () => {
           currentCharacter.theme.primaryTransparent,
       }}
     >
-         {/* 角色介紹部分 */}
+      {/* 角色介紹部分 */}
       <div
         className="character-content"
         style={{
@@ -209,7 +197,7 @@ const Characters = () => {
           } 100%)`,
         }}
       >
-         {/* 角色信息 */}
+        {/* 角色信息 */}
         <div
           className="character-info"
           style={{
@@ -269,27 +257,27 @@ const Characters = () => {
         ))}
       </div>
 
-       {/* 貼圖輪播區 */}
-       <div
-        className="carousel-section"
-        onMouseEnter={() => setIsHovering(true)}
-        onMouseLeave={() => setIsHovering(false)}
-      >
-        <div
-          className="carousel-track"
-          style={{
-            transform: `translateX(${carouselOffset}px)`,
-          }}
-        >
+      {/* 貼圖輪播區 */}
+      <div className="carousel-section">
+        <div className="carousel">
           {currentCharacter.stickers.map((sticker, index) => (
-            <img
-              key={index}
-              src={sticker}
-              alt={`Sticker ${index}`}
-              className="carousel-item"
-            />
+            <div key={index} className="carousel-item">
+              <img src={sticker} alt={`Sticker ${index}`} />
+            </div>
           ))}
         </div>
+      </div>
+      {/* 引导到 LINE 貼圖 */}
+      <div className="line-sticker-section">
+        <h2>喜歡我們的貼圖？</h2>
+        <a
+          href="https://line.me/S/sticker/29227577/?lang=zh-Hant&utm_source=gnsh_stickerDetail"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="line-sticker-link"
+        >
+          購買 LINE 貼圖《那個啥黑砂之1》
+        </a>
       </div>
     </div>
   );
