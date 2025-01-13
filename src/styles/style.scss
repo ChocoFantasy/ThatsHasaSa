@@ -436,77 +436,80 @@ a {
 
   // 輪播圖區域 + 內容區域
   .carousel-section {
-    padding: 20px 0;
-    /* 增加顶部和底部内边距 */
-    margin-bottom: 40px;
-    /* 为其他部分腾出空间 */
-    background-color: #f9f9f9;
-    /* 背景颜色区分 */
-    text-align: center;
-    /* 居中对齐内容 */
-
-    .carousel-container {
-      position: relative;
-      overflow: hidden;
-      max-width: 90%;
-      /* 最大宽度限制 */
-      margin: 0 auto;
-      /* 水平居中 */
-      height: 300px;
-      /* 增加高度以显示完整内容 */
-    }
-
-    .carousel-item {
-      position: absolute;
-      top: 0;
-      left: 0;
-      transition: transform 0.5s ease, opacity 0.5s ease;
-
-      img {
-        max-height: 100%;
-        max-width: 100%;
-        object-fit: contain;
-        /* 保持比例并显示完整内容 */
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        /* 添加阴影 */
-      }
-
-      h3 {
-        margin-top: 10px;
-        font-size: 1.2rem;
-        color: #333;
-      }
-    }
-
-    .carousel-button {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: rgba(0, 0, 0, 0.5);
-      color: white;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      width: 40px;
-      height: 40px;
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  
+    .carousel {
       display: flex;
       justify-content: center;
       align-items: center;
-      z-index: 10;
-      transition: background-color 0.3s;
-
-      &:hover {
-        background-color: rgba(0, 0, 0, 0.7);
+      position: relative;
+      height: 400px;
+    }
+  
+    .slide {
+      position: absolute;
+      width: 30%;
+      transition: transform 0.5s ease, opacity 0.5s ease;
+      opacity: 0; // 初始透明
+      transform: scale(0.8); // 略縮小
+  
+      &.active-slide {
+        transform: scale(1) translateX(0); // 中間圖片
+        opacity: 1;
+        z-index: 2;
+      }
+  
+      &.prev-slide {
+        transform: scale(0.9) translateX(-120%); // 左側圖片
+        opacity: 0.6;
+        z-index: 1;
+      }
+  
+      &.next-slide {
+        transform: scale(0.9) translateX(120%); // 右側圖片
+        opacity: 0.6;
+        z-index: 1;
+      }
+  
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
       }
     }
-
-    .prev {
-      left: 10px;
-    }
-
-    .next {
-      right: 10px;
+  
+    .carousel-nav {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      z-index: 10;
+  
+      button {
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+  
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.8);
+        }
+      }
     }
   }
 
@@ -916,7 +919,7 @@ a {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 450px;
+    height: 650px;
     /* 確保高度適中 */
     overflow: hidden;
 

@@ -10,25 +10,22 @@ const Home = () => {
     {
       id: 1,
       title: "Event 1",
-      image: `./images/Shop/Activity/New _productpost.png`,
+      image: "./images/Shop/Activity/New _productpost.png",
     },
     {
       id: 2,
       title: "Event 2",
-      image: `./images/Shop/Activity/Movie_New.png`,
+      image: "./images/Shop/Activity/Movie_New.png",
     },
     {
       id: 3,
       title: "Event 3",
-      image: `./images/Shop/Activity/New_Product_Acne_Care.png`,
+      image: "./images/Shop/Activity/New_Product_Acne_Care.png",
     },
   ];
 
   // 推特籤入的文章
-  const tweetIds = [
-    "1832614806949654601",
-    "1876698488454647923",
-  ];
+  const tweetIds = ["1832614806949654601", "1876698488454647923"];
 
   const newsItems = [
     {
@@ -52,12 +49,17 @@ const Home = () => {
     },
   ];
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000);
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  };
 
-    return () => clearInterval(timer);
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  };
+
+  useEffect(() => {
+    const timer = setInterval(nextSlide, 5000); // 每5秒自動切換
+    return () => clearInterval(timer); // 清除計時器
   }, []);
 
   return (
@@ -65,33 +67,47 @@ const Home = () => {
       <div className="home-container">
         {/* 主視覺圖 */}
         <div className="main-visual-section">
-        <div className="main-visual">
-          <img
-            src="./images/Home/Main-Vision.jpg"
-            alt="Main Visual"
-            className="main-visual-image"
-          />
-        </div>
+          <div className="main-visual">
+            <img
+              src="./images/Home/Main-Vision.jpg"
+              alt="Main Visual"
+              className="main-visual-image"
+            />
+          </div>
         </div>
 
         {/* 活動輪播圖 */}
         <div className="carousel-section">
           <div className="carousel">
-            {slides.map((slide, index) => (
-              <div
-                key={slide.id}
-                className={`slide ${currentSlide === index ? "active" : ""}`}
-              >
-                <img src={slide.image} alt={slide.title} />
-              </div>
-            ))}
+            {slides.map((slide, index) => {
+              let position = "next-slide";
+              if (index === currentSlide) position = "active-slide";
+              if (index === (currentSlide - 1 + slides.length) % slides.length)
+                position = "prev-slide";
+
+              return (
+                <div key={slide.id} className={`slide ${position}`}>
+                  <img src={slide.image} alt={slide.title} />
+                </div>
+              );
+            })}
+          </div>
+
+          {/* 導航按鈕 */}
+          <div className="carousel-nav">
+            <button className="prev" onClick={prevSlide}>
+              ←
+            </button>
+            <button className="next" onClick={nextSlide}>
+              →
+            </button>
           </div>
         </div>
         {/* 推廣與最新消息區 */}
         <div className="content-grid">
           {/* 推特推廣區 */}
           <div className="twitter-feed">
-            <h2>Twitter Feed</h2>
+            <h2>Twitter 推文</h2>
             <div className="twitter-content">
               {/* 嵌入指定的推文 ID */}
               {/* 使用 map 渲染多個推文 */}
