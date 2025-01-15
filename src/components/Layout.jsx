@@ -190,7 +190,8 @@ function Layout() {
           <div className="footer-grid">
             <div className="footer-section">
               <h3>About</h3>
-              <p>關於黑砂的大家庭</p>
+              <p>「那個啥黑砂!?」是創作者「黑砂」打造的原創角色IP</p>
+              <p>透過角色間的互動，感受生活的趣味與溫暖。</p>
             </div>
             <div className="footer-section">
               <h3>Social Media</h3>
@@ -213,7 +214,8 @@ function Layout() {
             </div>
             <div className="footer-section">
               <h3>Contact</h3>
-              <p>這是聯絡黑砂的方式</p>
+              <p>angel861107@gmail.com</p>
+              <p>有任何問題或合作需求，歡迎隨時與我們聯繫！</p>
             </div>
           </div>
           <div className="footer-bottom">
