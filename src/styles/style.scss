@@ -1145,7 +1145,7 @@ a {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 700px;
+    height: 70px;
     /* 確保高度適中 */
     overflow: hidden;
 
@@ -1368,7 +1368,10 @@ a {
           .product-info {
             display: flex;
             justify-content: space-between;
+            align-items: center;
+            /* 垂直對齊 */
             gap: 0.5rem;
+            /* 僅保留適度的間距 */
 
             .type {
               color: #4b5563;
@@ -1377,17 +1380,15 @@ a {
             .character-tag {
               display: inline-block;
               background-color: #f3f4f6;
-              padding: 0.5rem 0.5rem;
-              /* 減少上下和左右的 padding */
-              border-radius: 12px;
-              /* 更小的橢圓形 */
-              font-size: 1rem;
-              /* 更小的字體 */
+              padding: 0.5rem;
+              /* 減少 padding 以降低高度 */
+              border-radius: 8px;
+              /* 縮小圓角 */
+              font-size: 0.875rem;
+              /* 調整字體大小 */
               color: #4b5563;
-              line-height: 1;
-              /* 保持文字高度緊湊 */
-              margin-left: 0.5rem;
-              /* 和價格保持距離 */
+              line-height: 1.2;
+              /* 適當緊湊的行高 */
               white-space: nowrap;
               /* 防止換行 */
             }
