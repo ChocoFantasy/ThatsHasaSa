@@ -1565,3 +1565,8 @@ a {
   transform: translate(-50%, -50%) scale(2);
   background-color: rgba(55, 76, 81, 0.3);
 }
+
+.custom-cursor.click {
+  transform: translate(-50%, -50%) scale(1.5);
+  background: rgba(19, 119, 90, 0.5); /* 點擊時的顏色 */
+}

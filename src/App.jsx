@@ -50,18 +50,25 @@ function App() {
   
     const handleMouseOver = () => cursor.classList.add("hover");
     const handleMouseOut = () => cursor.classList.remove("hover");
-    const handleMouseDown = () =>
-      (cursor.style.transform = "translate(-50%, -50%) scale(1.5)");
-    const handleMouseUp = () =>
-      (cursor.style.transform = "translate(-50%, -50%) scale(1)");
+    const handleMouseDown = () => cursor.classList.add("click"); // 點擊樣式
+    const handleMouseUp = () => cursor.classList.remove("click"); // 恢復樣式
   
     document.addEventListener("mousemove", handleMouseMove);
+    document.addEventListener("mousedown", handleMouseDown);
+    document.addEventListener("mouseup", handleMouseUp);
+  
     document.querySelectorAll("a, button, .hoverable").forEach((element) => {
       element.addEventListener("mouseover", handleMouseOver);
       element.addEventListener("mouseout", handleMouseOut);
     });
-  }
-  )
+  
+    return () => {
+      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("mousedown", handleMouseDown);
+      document.removeEventListener("mouseup", handleMouseUp);
+    };
+  }, []);
+  
   return (
     <>
 
