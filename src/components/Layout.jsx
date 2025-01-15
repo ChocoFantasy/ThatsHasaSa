@@ -218,7 +218,7 @@ function Layout() {
           </div>
           <div className="footer-bottom">
             <p>
-              Copyright&copy; Hesakizenn 2025 All Rights Reserved 學生練習作品
+              Copyright&copy; Hesakizenn 2025 All Rights Reserved 學生練習作品，無任何商業營利用途。By 盧千玉
             </p>
           </div>
         </div>
