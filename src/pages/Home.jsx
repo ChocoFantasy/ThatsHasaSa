@@ -58,7 +58,7 @@ const Home = () => {
   };
 
   useEffect(() => {
-    const timer = setInterval(nextSlide, 5000); // 每5秒自動切換
+    const timer = setInterval(nextSlide, 3000); // 每5秒自動切換
     return () => clearInterval(timer); // 清除計時器
   }, []);
 
