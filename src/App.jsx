@@ -38,6 +38,30 @@ function App() {
     };
   }, []);
 
+  useEffect(() => {
+    const cursor = document.createElement("div");
+    cursor.classList.add("custom-cursor");
+    document.body.appendChild(cursor);
+  
+    const handleMouseMove = (e) => {
+      cursor.style.top = `${e.clientY}px`;
+      cursor.style.left = `${e.clientX}px`;
+    };
+  
+    const handleMouseOver = () => cursor.classList.add("hover");
+    const handleMouseOut = () => cursor.classList.remove("hover");
+    const handleMouseDown = () =>
+      (cursor.style.transform = "translate(-50%, -50%) scale(1.5)");
+    const handleMouseUp = () =>
+      (cursor.style.transform = "translate(-50%, -50%) scale(1)");
+  
+    document.addEventListener("mousemove", handleMouseMove);
+    document.querySelectorAll("a, button, .hoverable").forEach((element) => {
+      element.addEventListener("mouseover", handleMouseOver);
+      element.addEventListener("mouseout", handleMouseOut);
+    });
+  }
+  )
   return (
     <>
 
